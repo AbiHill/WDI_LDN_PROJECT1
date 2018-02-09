@@ -1,8 +1,41 @@
 body {
   background-color: pink;
+}
+
+.ducky {
+  height: 200px;
+  width: 200px;
+  float: right;
+  clear: both;
+}
 
 
-h1 {
-  text-align: center;
-  }
+.teddy {
+  height: 200px;
+  width: 200px;
+  clear: both;
+}
+
+.dino {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  display: block;
+  clear: both;
+}
+
+.dino {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  display: block;
+  clear: both;
+}
+
+.TopRightToy img {
+  width: 100px;
+  height: 100px;
+  float: right;
+  clear: both;
+  margin-bottom: 50px;
 }
