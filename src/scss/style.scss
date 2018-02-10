@@ -1,41 +1,52 @@
 body {
-  background-color: pink;
+  background-image: url(/images/background.jpg);
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
 }
 
-.ducky {
+header {
   height: 200px;
-  width: 200px;
-  float: right;
-  clear: both;
+  position: fixed;
+  display: flex;
 }
 
 
-.teddy {
-  height: 200px;
-  width: 200px;
-  clear: both;
+main {
+  height: 800px;
+
 }
 
-.dino {
-  height: 200px;
+.top-left {
   width: 200px;
-  margin: 0 auto;
-  display: block;
-  clear: both;
+  height: 166px;
+
 }
 
-.dino {
-  height: 200px;
-  width: 200px;
-  margin: 0 auto;
-  display: block;
-  clear: both;
+.top-centre {
+  width: calc(100vw - 400px);
+  height: 166px;
+  position: relative;
+  text-align: center;
+
+  img {
+    display: block;
+    margin: 0 auto;
+
+  }
+  p {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+  }
+
 }
 
-.TopRightToy img {
-  width: 100px;
-  height: 100px;
-  float: right;
-  clear: both;
-  margin-bottom: 50px;
+.top-right{
+  width: 200px;
+  height: 166px;
 }

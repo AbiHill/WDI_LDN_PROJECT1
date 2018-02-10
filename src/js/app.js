@@ -29,10 +29,10 @@ $(() => {
     let currentAnswer = toys[randomIndexNumber].answer;
     console.log('This is the Current Answer ' + currentAnswer);
   }
-  randomToyGenerator();
 
 
 
+  // setInterval(randomToyGenerator, 10000);
 
 });
 
@@ -40,4 +40,8 @@ $(() => {
 //    - Randomly generate a number between 1-3 using math.floor(math.Random())*10 save this in to a variable call let randomIndex;
 //    - then current toy = toy.pop(randomIndex)
 
-//Step 2: 
+//Step 2: Check if the clicked image is correct.
+//  listen for a click on all images,
+//  if the image clicked on's class is === to currentAnswer then score ++
+
+//if currentAnswer is === currentAnswer then generate another
