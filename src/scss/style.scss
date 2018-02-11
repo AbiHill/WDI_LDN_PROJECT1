@@ -9,7 +9,6 @@ body {
 }
 
 header {
-  height: 400px;
   position: fixed;
   display: flex;
 
@@ -100,21 +99,34 @@ main {
 
   }
 
+  .items {
+    position: relative;
+  }
+
   .lavalamp {
     width: 50px;
     height: 80px;
     background-color: orange;
+    display: inline-block;
+    position: absolute;
+    left: 250px;
+    bottom: 140px;
   }
 
   .spock {
     width: 50px;
     height: 80px;
     background-color: blue;
+    display: inline-block;
+    position: absolute;
+    left: 980px;
+    bottom: 285px;
   }
 
   .acid {
     width: 50px;
     height: 80px;
     background-color: green;
+    display: inline-block;
   }
 }
