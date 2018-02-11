@@ -16,21 +16,65 @@ $(() => {
 
   //Toys Object Array
   const toys = [{
-    name: 'dino',
-    image: '/images/dino.png',
-    answer: 'dino'
+    name: 'ball',
+    image: '/images/ball.png',
+    answer: 'ball'
   }, {
     name: 'acid',
     image: '/images/acid.png',
     answer: 'acid'
   }, {
-    name: 'blue-fish',
-    image: '/images/blue-fish.png',
-    answer: 'blue-fish'
+    name: 'fish',
+    image: '/images/fish.png',
+    answer: 'fish'
   }, {
     name: 'spock',
     image: '/images/spock.png',
     answer: 'spock'
+  }, {
+    name: 'apple',
+    image: '/images/apple.png',
+    answer: 'apple'
+  }, {
+    name: 'clock',
+    image: '/images/clock.png',
+    answer: 'clock'
+  }, {
+    name: 'controller',
+    image: '/images/controller.png',
+    answer: 'controller'
+  }, {
+    name: 'dinner',
+    image: '/images/dinner.png',
+    answer: 'dinner'
+  }, {
+    name: 'lavalamp',
+    image: '/images/lavalamp.png',
+    answer: 'lavalamp'
+  }, {
+    name: 'penguin',
+    image: '/images/penguin.png',
+    answer: 'penguin'
+  }, {
+    name: 'pokemon',
+    image: '/images/pokemon.png',
+    answer: 'pokemon'
+  }, {
+    name: 'science',
+    image: '/images/science.png',
+    answer: 'science'
+  }, {
+    name: 'slipper',
+    image: '/images/slipper.png',
+    answer: 'slipper'
+  }, {
+    name: 'teddy',
+    image: '/images/teddy.png',
+    answer: 'teddy'
+  }, {
+    name: 'vader',
+    image: '/images/vader.png',
+    answer: 'vader'
   }
   ];
 
@@ -74,7 +118,6 @@ $(() => {
     if(playersAnswer === currentAnswer) {
       score ++;
       $score.text(score);
-      delete currentAnswer;
       randomToyGenerator();
     }
 

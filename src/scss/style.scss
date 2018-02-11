@@ -1,7 +1,7 @@
 body {
   background-image: url(/images/background.jpg);
-  min-height: 100%;
-  min-width: 100%;
+  min-height: 980px;
+  min-width: 1280px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -25,7 +25,7 @@ header {
   }
 
   .top-centre {
-    width: calc(100vw - 400px);
+    width: calc(100vw - 370px);
     height: 166px;
     position: relative;
     text-align: center;
@@ -47,10 +47,23 @@ header {
 
   .top-right{
     width: 200px;
-    height: 166px;
+    height: 250px;
+    margin-right: 30px;
+    padding: 0;
+    border: 0;
+
   }
 
 }
+
+.current-toy {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.70);
+  border-radius: 100px;
+}
+
+
 
 main {
   height: 960px;
