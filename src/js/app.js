@@ -8,26 +8,29 @@ $(() => {
   const $go = $('#go');
   const $startbox = $('#startbox');
   const $items = $('.items');
-  console.log($items.children());
+  const $score = $('#score');
 
+  let playersAnswer = '';
+  let currentAnswer = '';
+  let score = 0;
 
   //Toys Object Array
   const toys = [{
     name: 'dino',
     image: '/images/dino.png',
-    answer: '.dino'
+    answer: 'dino'
   }, {
     name: 'acid',
     image: '/images/acid.png',
-    answer: '.acid'
+    answer: 'acid'
   }, {
     name: 'blue-fish',
     image: '/images/blue-fish.png',
-    answer: '.blue-fish'
+    answer: 'blue-fish'
   }, {
     name: 'spock',
     image: '/images/spock.png',
-    answer: '.spock'
+    answer: 'spock'
   }
   ];
 
@@ -52,11 +55,11 @@ $(() => {
   function randomToyGenerator(){
     const randomIndexNumber = Math.floor(Math.random()*toys.length);
     const currentToyImage = toys[randomIndexNumber].image;
-    console.log('This is the current Toy Image' + currentToyImage);
     $currentToy.attr('src', currentToyImage);
-    const currentAnswer = toys[randomIndexNumber].answer;
-    console.log('This is the Current Answer ' + currentAnswer);
+    currentAnswer = toys[randomIndexNumber].answer;
+
   }
+
 
   //Play Game Function
   $go.on('click', function() {
@@ -67,8 +70,14 @@ $(() => {
 
   //Click check answer
   $items.children().on('click', function(e) {
-    console.log(e.target);
-  });
+    playersAnswer = (e.target.className);
+    if(playersAnswer === currentAnswer) {
+      score ++;
+      $score.text(score);
+      delete currentAnswer;
+      randomToyGenerator();
+    }
 
+  });
 
 });
