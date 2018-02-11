@@ -3,22 +3,50 @@ $(() => {
 
   //get DOM elements
   const $currentToy = $('#currentToy');
+  const $skip = $('#skip');
+  const $timer = $('#timer');
+  const $go = $('#go');
+  const $startbox = $('#startbox');
+  const $items = $('.items');
+  console.log($items.children());
 
 
   //Toys Object Array
   const toys = [{
     name: 'dino',
-    image: '/images/dino.jpg',
+    image: '/images/dino.png',
     answer: '.dino'
   }, {
-    name: 'ducky',
-    image: '/images/ducky.jpg',
-    answer: '.ducky'
+    name: 'acid',
+    image: '/images/acid.png',
+    answer: '.acid'
   }, {
-    name: 'teddy',
-    image: '/images/teddy.jpg',
-    answer: '.teddy'
-  }];
+    name: 'blue-fish',
+    image: '/images/blue-fish.png',
+    answer: '.blue-fish'
+  }, {
+    name: 'spock',
+    image: '/images/spock.png',
+    answer: '.spock'
+  }
+  ];
+
+  function startTimer(){
+    let time = 60;
+    const timerRunning = setInterval(() => {
+      time -= 1;
+      if (time === 0) {
+        clearInterval(timerRunning);
+      }
+      $timer.text(time);
+    }, 1000);
+  }
+
+
+  //Skip button
+  $skip.on('click', function() {
+    randomToyGenerator();
+  });
 
   //Random Toy Generator Function
   function randomToyGenerator(){
@@ -26,22 +54,21 @@ $(() => {
     const currentToyImage = toys[randomIndexNumber].image;
     console.log('This is the current Toy Image' + currentToyImage);
     $currentToy.attr('src', currentToyImage);
-    let currentAnswer = toys[randomIndexNumber].answer;
+    const currentAnswer = toys[randomIndexNumber].answer;
     console.log('This is the Current Answer ' + currentAnswer);
   }
 
+  //Play Game Function
+  $go.on('click', function() {
+    randomToyGenerator();
+    startTimer();
+    $startbox.css('visibility','hidden');
+  });
 
+  //Click check answer
+  $items.children().on('click', function(e) {
+    console.log(e.target);
+  });
 
-  // setInterval(randomToyGenerator, 10000);
 
 });
-
-//Step 1: Get the TopRight Image to rotate randomly every 10 seconds.
-//    - Randomly generate a number between 1-3 using math.floor(math.Random())*10 save this in to a variable call let randomIndex;
-//    - then current toy = toy.pop(randomIndex)
-
-//Step 2: Check if the clicked image is correct.
-//  listen for a click on all images,
-//  if the image clicked on's class is === to currentAnswer then score ++
-
-//if currentAnswer is === currentAnswer then generate another

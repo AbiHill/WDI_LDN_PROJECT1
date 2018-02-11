@@ -10,20 +10,41 @@
   <body>
     <header>
       <div class="top-left">
-        <p>Score: 60</p>
+        <p>Score: <span id="score">0</span></p>
       </div>
       <div class="top-centre">
         <img src="/images/timer.png" alt="timer">
-        <p class="centre-text">60</p>
+        <p class="centre-text" id="timer">60</p>
       </div>
       <div class="top-right">
         <p>FIND ME:</p>
-        <img src="/images/dino.png" alt="dino">
+        <img id="currentToy" src="/images/dino.png" alt="dino">
+        <button id="skip" type="button" name="button">SKIP ></button>
       </div>
     </header>
     <main>
+      <div class="startbox-parent">
+        <div id="startbox" class="start-box">
+          <h1>Find'Ems</h1>
+          <h2>How to play:</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <button id="go" type="button" name="button">GO ></button>
+        </div>
+      </div>
+      <div class="items">
+        <div class="lavalamp" id="lavalamp">
+          lavalamp
+        </div>
+        <div class="acid" id="acid">
+          acid
+        </div>
+        <div class="spock" id="spock">
+          spock
+        </div>
+      </div>
     </main>
     <footer>
+
     </footer>
   </body>
 </html>
