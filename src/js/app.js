@@ -9,6 +9,7 @@ $(() => {
   const $startbox = $('#startbox');
   const $items = $('.items');
   const $score = $('#score');
+  const $threeTwoOne = $('#three-two-one');
 
   let playersAnswer = '';
   let currentAnswer = '';
@@ -78,8 +79,23 @@ $(() => {
   }
   ];
 
+  function threeTwoOne(){
+    let start = 3;
+    // change this to the 3 second countdown
+    const startRunning = setInterval(() => {
+      start -= 1;
+      if (start === 0) {
+        $threeTwoOne.text('GO!');
+        clearInterval(startRunning);
+        startTimer();
+      }
+      $threeTwoOne.text(start);
+    }, 800);
+  }
+
   function startTimer(){
     let time = 60;
+    // change this to the 3 second countdown
     const timerRunning = setInterval(() => {
       time -= 1;
       if (time === 0) {
@@ -88,7 +104,6 @@ $(() => {
       $timer.text(time);
     }, 1000);
   }
-
 
   //Skip button
   $skip.on('click', function() {
@@ -108,14 +123,15 @@ $(() => {
   //Play Game Function
   $go.on('click', function() {
     randomToyGenerator();
-    startTimer();
-    $startbox.css('visibility','hidden');
+    threeTwoOne();
+    $startbox.css('display','none');
   });
 
   //Click check answer
   $items.children().on('click', function(e) {
     playersAnswer = (e.target.className);
     if(playersAnswer === currentAnswer) {
+      // find currentAnswer and remove from object array
       score ++;
       $score.text(score);
       randomToyGenerator();
