@@ -5,19 +5,21 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
+  overflow-x: scroll;
+  margin: 0;
 }
 
 // MODAL
 
 .modal {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: rgba(255,255,255,0.5);
 	z-index: 99999;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
   padding: 0;
   border: 0;
   position: fixed;
@@ -48,14 +50,33 @@ body {
 
 }
 
+
+// HIDES THE GAME & GAME WRAPPER
+.game {
+  display: none;
+}
+
+// HEADER
+
+header {
+  display: flex;
+  position: fixed;
+
+
 .top-left {
   width: 200px;
   height: 166px;
 
+  p {
+    background-color: rgba(255, 255, 255, 0.20);
+    padding: 20px;
+    margin-left: -10px;
+  }
+
   }
 
 .top-centre {
-  width: calc(100vw - 370px);
+  width: calc(100vw - 400px);
   height: 166px;
   position: relative;
   text-align: center;
@@ -78,8 +99,8 @@ body {
 
   .top-right{
     width: 200px;
-    height: 250px;
-    margin-right: 30px;
+    height: 200px;
+    margin: 10px;
     padding: 0;
     border: 0;
 
@@ -89,28 +110,72 @@ body {
       background-color: rgba(255, 255, 255, 0.20);
       border-radius: 100px;
     }
+  }
+}
+
+  // Three two one count down
+
+  .three-two-one {
+    font-size: 200px;
+    font-weight: 800;
+    text-align: center;
+    color: red;
 
   }
-
-
-
-
-// Three two one count down
-
-.three-two-one {
-  font-size: 100px;
-  font-weight: 800;
-
-}
-// HIDES THE GAME
-.game {
-  display: none;
-}
 
 // Toy Item Divs
 
 .items {
   position: relative;
+}
+
+.acid {
+width: 50px;
+height: 80px;
+background-color: green;
+display: inline-block;
+}
+
+.apple {
+width: 50px;
+height: 80px;
+background-color: pink;
+display: inline-block;
+}
+
+.ball {
+width: 50px;
+height: 80px;
+background-color: brown;
+display: inline-block;
+}
+
+.clock {
+width: 50px;
+height: 80px;
+background-color: purple;
+display: inline-block;
+}
+
+.controller {
+width: 50px;
+height: 80px;
+background-color: yellow;
+display: inline-block;
+}
+
+.dinner {
+width: 50px;
+height: 80px;
+background-color: dodgerblue;
+display: inline-block;
+}
+
+.fish {
+width: 50px;
+height: 80px;
+background-color: red;
+display: inline-block;
 }
 
 .lavalamp {
@@ -119,9 +184,36 @@ body {
   background-color: orange;
   display: inline-block;
   position: absolute;
-  left: 50px;
-  bottom: 40px;
 }
+
+.penguin {
+width: 50px;
+height: 80px;
+background-color: grey;
+display: inline-block;
+}
+
+.pokemon {
+width: 50px;
+height: 80px;
+background-color: darkgreen;
+display: inline-block;
+}
+
+.science {
+width: 50px;
+height: 80px;
+background-color: lightblue;
+display: inline-block;
+}
+
+.slipper {
+width: 50px;
+height: 80px;
+background-color: darkblue;
+display: inline-block;
+}
+
 
 .spock {
 width: 50px;
@@ -129,13 +221,20 @@ height: 80px;
 background-color: blue;
 display: inline-block;
 position: absolute;
-left: 80px;
-bottom: 85px;
+left: 970px;
+top: 200px;
 }
 
-.acid {
+.teddy {
 width: 50px;
 height: 80px;
-background-color: green;
+background-color: darkred;
+display: inline-block;
+}
+
+.vader {
+width: 50px;
+height: 80px;
+background-color: gold;
 display: inline-block;
 }

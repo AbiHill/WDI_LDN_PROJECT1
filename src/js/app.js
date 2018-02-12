@@ -3,13 +3,13 @@ $(() => {
 
   //get DOM elements
   const $currentToy = $('#currentToy');
-  const $skip = $('#skip');
   const $timer = $('#timer');
   const $go = $('#go');
-  const $startbox = $('#startbox');
   const $items = $('.items');
   const $score = $('#score');
   const $threeTwoOne = $('#three-two-one');
+  const $modal = $('#modal');
+  const $game = $('#game');
 
   let playersAnswer = '';
   let currentAnswer = '';
@@ -85,9 +85,10 @@ $(() => {
     const startRunning = setInterval(() => {
       start -= 1;
       if (start === 0) {
-        $threeTwoOne.text('GO!');
+        start = 'GO!';
         clearInterval(startRunning);
         startTimer();
+        setTimeout(() => $threeTwoOne.css('display','none'),1000);
       }
       $threeTwoOne.text(start);
     }, 800);
@@ -106,7 +107,7 @@ $(() => {
   }
 
   //Skip button
-  $skip.on('click', function() {
+  $currentToy.on('click', function() {
     randomToyGenerator();
   });
 
@@ -124,7 +125,8 @@ $(() => {
   $go.on('click', function() {
     randomToyGenerator();
     threeTwoOne();
-    $startbox.css('display','none');
+    $game.css('display', 'block');
+    $modal.css('display','none');
   });
 
   //Click check answer
