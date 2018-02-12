@@ -80,7 +80,7 @@ $(() => {
   ];
 
   function threeTwoOne(){
-    $timer.css('color','red');
+    $timer.css('color','#D20010', 'font-size', '15px');
     let start = 3;
     // change this to the 3 second countdown
     const startRunning = setInterval(() => {

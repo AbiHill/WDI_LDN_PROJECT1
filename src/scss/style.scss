@@ -7,6 +7,7 @@ body {
   background-size: cover;
   overflow-x: scroll;
   margin: 0;
+  font-family: 'Russo One', sans-serif;
 }
 
 // MODAL
@@ -25,18 +26,25 @@ body {
   position: fixed;
 
   .start-box {
-    width: 600px;
-    height: 400px;
-    background-color: white;
-    border-radius: 10px;
+    position: relative;
+  width: 600px;
+  height: 400px;
+  margin: 20px 0;
+  background: #64FD59;
+  border-radius: 50% / 10%;
+  color: black;
+  text-align: center;
+  text-indent: .1em;
 
     h1, h2 {
       text-align: center;
+      position: relative;
     }
 
     p {
       text-align: center;
       padding: 30px;
+      position: relative;
     }
     button {
       background-color: black;
@@ -45,9 +53,22 @@ body {
       display: block;
       margin: 0 auto;
       border-radius: 10px;
+      position: relative;
     }
   }
 
+}
+
+
+.start-box:before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  right: -5%;
+  left: -5%;
+  background: inherit;
+  border-radius: 5% / 50%;
 }
 
 
@@ -67,11 +88,12 @@ header {
   width: 200px;
   height: 166px;
 
-  p {
-    background-color: rgba(255, 255, 255, 0.20);
-    padding: 20px;
-    margin-left: -10px;
-  }
+    p {
+      padding: 5px 5px 0px 12px;
+      font-size: 25px;
+      font-weight: 800;
+      font-family: 'Russo One', sans-serif;
+    }
 
   }
 
@@ -97,21 +119,44 @@ header {
 
   }
 
+
   .top-right{
     width: 200px;
-    height: 200px;
-    margin: 10px;
+    height: 166px;
     padding: 0;
     border: 0;
 
-    .current-toy {
-      width: 200px;
-      height: 200px;
-      background-color: rgba(255, 255, 255, 0.20);
+    img.current-toy {
+      background-color: rgba(255, 255, 255, 0.40);
       border-radius: 100px;
+      width: 166px;
+      height: 166px;
+      display: block;
+      margin: 17px auto;
+
     }
   }
 }
+
+.pointer {
+    width: 150px;
+    height: 40px;
+    position: relative;
+    background: #64FD59;
+  }
+
+
+  .pointer:before {
+    content: "";
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid #64FD59;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+  }
 
   // Three two one count down
 
@@ -120,7 +165,7 @@ header {
     font-size: 50px;
     font-weight: 800;
     text-align: center;
-    color: red;
+    color: #64FD59;
   }
 
 // Toy Item Divs
@@ -140,81 +185,113 @@ top: 500px;
 }
 
 .apple {
-width: 50px;
-height: 80px;
-border: 2px solid pink;
-display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 2px solid pink;
+    display: inline-block;
+    position: absolute;
+    top: 905px;
+    left: 1050px;
 }
 
 .ball {
-width: 50px;
-height: 80px;
-border: 2px solid brown;
-display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 2px solid brown;
+    display: inline-block;
+    position: absolute;
+    top: 330px;
+    left: 30px;
 }
 
 .clock {
-width: 50px;
-height: 80px;
-border: 2px solid purple;
-display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 2px solid purple;
+    display: inline-block;
+    position: absolute;
+    top: 210px;
+    left: 360px;
 }
 
 .controller {
-width: 50px;
-height: 80px;
-border: 2px solid yellow;
-display: inline-block;
+    width: 70px;
+    height: 60px;
+    border: 2px solid yellow;
+    display: inline-block;
+    position: absolute;
+    top: 820px;
+    left: 910px;
 }
 
 .dinner {
-width: 50px;
-height: 80px;
-border: 2px solid dodgerblue;
-display: inline-block;
+    width: 140px;
+    height: 70px;
+    border: 2px solid dodgerblue;
+    display: inline-block;
+    position: absolute;
+    top: 880px;
+    left: 640px;
 }
 
 .fish {
-width: 50px;
-height: 80px;
-border: 2px solid red;
-display: inline-block;
+    width: 50px;
+    height: 40px;
+    border: 2px solid red;
+    display: inline-block;
+    position: absolute;
+    top: 420px;
+    left: 320px;
 }
 
 .lavalamp {
-  width: 50px;
-  height: 80px;
-  border: 2px solid orange;
-  display: inline-block;
-  position: absolute;
+    width: 60px;
+    height: 110px;
+    border: 2px solid orange;
+    display: inline-block;
+    position: absolute;
+    top: 430px;
+    left: 260px;
 }
 
 .penguin {
-width: 50px;
-height: 80px;
-border: 2px solid grey;
-display: inline-block;
+    width: 50px;
+    height: 70px;
+    border: 2px solid grey;
+    display: inline-block;
+    position: absolute;
+    top: 420px;
+    left: 520px;
 }
 
 .pokemon {
-width: 50px;
-height: 80px;
-border: 2px solid darkgreen;
-display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 2px solid darkgreen;
+    display: inline-block;
+    position: absolute;
+    top: 680px;
+    left: 520px;
 }
 
 .science {
-width: 50px;
-height: 80px;
-border: 2px solid lightblue;
-display: inline-block;
+    width: 50px;
+    height: 80px;
+    border: 2px solid lightblue;
+    display: inline-block;
+    position: absolute;
+    top: 580px;
+    left: 1180px;
 }
 
 .slipper {
-width: 50px;
-height: 80px;
-border: 2px solid darkblue;
-display: inline-block;
+    width: 50px;
+    height: 60px;
+    border: 2px solid darkblue;
+    display: inline-block;
+    position: absolute;
+    top: 875px;
+    left: 240px;
 }
 
 
@@ -229,10 +306,13 @@ top: 303px;
 }
 
 .teddy {
-width: 50px;
-height: 80px;
-border: 2px solid darkred;
-display: inline-block;
+    width: 200px;
+    height: 80px;
+    border: 2px solid darkred;
+    display: inline-block;
+    position: absolute;
+    top: 600px;
+    left: 150px;
 }
 
 .vader {
