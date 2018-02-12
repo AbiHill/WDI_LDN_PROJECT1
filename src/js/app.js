@@ -80,6 +80,7 @@ $(() => {
   ];
 
   function threeTwoOne(){
+    $timer.css('color','red');
     let start = 3;
     // change this to the 3 second countdown
     const startRunning = setInterval(() => {
@@ -90,12 +91,13 @@ $(() => {
         startTimer();
         setTimeout(() => $threeTwoOne.css('display','none'),1000);
       }
-      $threeTwoOne.text(start);
+      $timer.text(start);
     }, 800);
   }
 
   function startTimer(){
     let time = 60;
+    $timer.css('color','black');
     // change this to the 3 second countdown
     const timerRunning = setInterval(() => {
       time -= 1;
