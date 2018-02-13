@@ -3,7 +3,7 @@ body {
   min-height: 980px;
   min-width: 1280px;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left;
   background-size: cover;
   overflow-x: scroll;
   margin: 0;
@@ -12,11 +12,11 @@ body {
 
 // MODAL
 
-.modal {
+.start-modal {
   width: 100vw;
   height: 100vh;
-  background: rgba(255,255,255,0.5);
-	z-index: 99999;
+  background: rgba(0,0,0,0.5);
+  z-index: 99999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,14 +27,14 @@ body {
 
   .start-box {
     position: relative;
-  width: 600px;
-  height: 400px;
-  margin: 20px 0;
-  background: #64FD59;
-  border-radius: 50% / 10%;
-  color: black;
-  text-align: center;
-  text-indent: .1em;
+    width: 600px;
+    height: 400px;
+    margin: 20px 0;
+    background: #64FD59;
+    border-radius: 50% / 10%;
+    color: black;
+    text-align: center;
+    text-indent: .1em;
 
     h1, h2 {
       text-align: center;
@@ -54,6 +54,56 @@ body {
       margin: 0 auto;
       border-radius: 10px;
       position: relative;
+    }
+  }
+
+}
+
+.score-modal {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: fixed;
+  display: none;
+
+  .score-box {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    margin: 20px 0;
+    background: #64FD59;
+    border-radius: 50% / 10%;
+    color: black;
+    text-align: center;
+    text-indent: .1em;
+
+    h1, h2 {
+      text-align: center;
+      position: relative;
+    }
+
+    p {
+      text-align: center;
+      position: relative;
+      font-size: 30px;
+    }
+    button {
+      background-color: black;
+      width: 200px;
+      padding: 10px;
+      color: white;
+      display: block;
+      margin: 0 auto;
+      border-radius: 5px;
+      position: relative;
+      border: 0;
     }
   }
 
@@ -84,9 +134,9 @@ header {
   position: fixed;
 
 
-.top-left {
-  width: 200px;
-  height: 166px;
+  .top-left {
+    width: 200px;
+    height: 166px;
 
     p {
       padding: 5px 5px 0px 12px;
@@ -97,11 +147,11 @@ header {
 
   }
 
-.top-centre {
-  width: calc(100vw - 400px);
-  height: 166px;
-  position: relative;
-  text-align: center;
+  .top-centre {
+    width: calc(100vw - 400px);
+    height: 166px;
+    position: relative;
+    text-align: center;
 
     img {
       display: block;
@@ -139,34 +189,34 @@ header {
 }
 
 .pointer {
-    width: 150px;
-    height: 40px;
-    position: relative;
-    background: #64FD59;
-  }
+  width: 150px;
+  height: 40px;
+  position: relative;
+  background: #64FD59;
+}
 
 
-  .pointer:before {
-    content: "";
-    position: absolute;
-    right: -20px;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-left: 20px solid #64FD59;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-  }
+.pointer:before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #64FD59;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
 
-  // Three two one count down
+// Three two one count down
 
 
-  .three-two-one {
-    font-size: 50px;
-    font-weight: 800;
-    text-align: center;
-    color: #64FD59;
-  }
+.three-two-one {
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+  color: #64FD59;
+}
 
 // Toy Item Divs
 
@@ -175,153 +225,181 @@ header {
 }
 
 .acid {
-width: 40px;
-height: 40px;
-border: 2px solid green;
-display: inline-block;
-position: absolute;
-left: 480px;
-top: 500px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid green;
+  display: inline-block;
+  position: absolute;
+  left: 515px;
+  top: 500px;
 }
 
 .apple {
-    width: 50px;
-    height: 50px;
-    border: 2px solid pink;
-    display: inline-block;
-    position: absolute;
-    top: 905px;
-    left: 1050px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid pink;
+  display: inline-block;
+  position: absolute;
+  top: 905px;
+  left: 1085px;
 }
 
 .ball {
-    width: 80px;
-    height: 80px;
-    border: 2px solid brown;
-    display: inline-block;
-    position: absolute;
-    top: 330px;
-    left: 30px;
+  width: 80px;
+  height: 80px;
+  border: 2px solid brown;
+  display: inline-block;
+  position: absolute;
+  top: 330px;
+  left: 65px;
 }
 
 .clock {
-    width: 50px;
-    height: 50px;
-    border: 2px solid purple;
-    display: inline-block;
-    position: absolute;
-    top: 210px;
-    left: 360px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid purple;
+  display: inline-block;
+  position: absolute;
+  top: 210px;
+  left: 395px;
 }
 
 .controller {
-    width: 70px;
-    height: 60px;
-    border: 2px solid yellow;
-    display: inline-block;
-    position: absolute;
-    top: 820px;
-    left: 910px;
+  width: 70px;
+  height: 60px;
+  border: 2px solid yellow;
+  display: inline-block;
+  position: absolute;
+  top: 820px;
+  left: 945px;
 }
 
 .dinner {
-    width: 140px;
-    height: 70px;
-    border: 2px solid dodgerblue;
-    display: inline-block;
-    position: absolute;
-    top: 880px;
-    left: 640px;
+  width: 140px;
+  height: 70px;
+  border: 2px solid dodgerblue;
+  display: inline-block;
+  position: absolute;
+  top: 880px;
+  left: 675px;
 }
 
 .fish {
-    width: 50px;
-    height: 40px;
-    border: 2px solid red;
-    display: inline-block;
-    position: absolute;
-    top: 420px;
-    left: 320px;
+  width: 50px;
+  height: 40px;
+  border: 2px solid red;
+  display: inline-block;
+  position: absolute;
+  top: 420px;
+  left: 355px;
 }
 
 .lavalamp {
-    width: 60px;
-    height: 110px;
-    border: 2px solid orange;
-    display: inline-block;
-    position: absolute;
-    top: 430px;
-    left: 260px;
+  width: 60px;
+  height: 110px;
+  border: 2px solid orange;
+  display: inline-block;
+  position: absolute;
+  top: 430px;
+  left: 295px;
 }
 
 .penguin {
-    width: 50px;
-    height: 70px;
-    border: 2px solid grey;
-    display: inline-block;
-    position: absolute;
-    top: 420px;
-    left: 520px;
+  width: 50px;
+  height: 70px;
+  border: 2px solid grey;
+  display: inline-block;
+  position: absolute;
+  top: 420px;
+  left: 555px;
 }
 
 .pokemon {
-    width: 100px;
-    height: 100px;
-    border: 2px solid darkgreen;
-    display: inline-block;
-    position: absolute;
-    top: 680px;
-    left: 520px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid darkgreen;
+  display: inline-block;
+  position: absolute;
+  top: 680px;
+  left: 555px;
 }
 
 .science {
-    width: 50px;
-    height: 80px;
-    border: 2px solid lightblue;
-    display: inline-block;
-    position: absolute;
-    top: 580px;
-    left: 1180px;
+  width: 50px;
+  height: 80px;
+  border: 2px solid lightblue;
+  display: inline-block;
+  position: absolute;
+  top: 580px;
+  left: 1215px;
 }
 
 .slipper {
-    width: 50px;
-    height: 60px;
-    border: 2px solid darkblue;
-    display: inline-block;
-    position: absolute;
-    top: 875px;
-    left: 240px;
+  width: 50px;
+  height: 60px;
+  border: 2px solid darkblue;
+  display: inline-block;
+  position: absolute;
+  top: 875px;
+  left: 275px;
 }
 
 
 .spock {
-width: 44px;
-height: 60px;
-border: 2px solid blue;
-display: inline-block;
-position: absolute;
-left: 974px;
-top: 303px;
+  width: 44px;
+  height: 60px;
+  border: 2px solid blue;
+  display: inline-block;
+  position: absolute;
+  left: 1009px;
+  top: 303px;
 }
 
 .teddy {
-    width: 200px;
-    height: 80px;
-    border: 2px solid darkred;
-    display: inline-block;
-    position: absolute;
-    top: 600px;
-    left: 150px;
+  width: 200px;
+  height: 80px;
+  border: 2px solid darkred;
+  display: inline-block;
+  position: absolute;
+  top: 600px;
+  left: 185px;
 }
 
 .vader {
-width: 120px;
-height: 120px;
-border: 2px solid gold;
-border-radius: 100px;
-display: inline-block;
-position: absolute;
-left: 1005px;
-top: 350px;
+  width: 120px;
+  height: 120px;
+  border: 2px solid gold;
+  border-radius: 100px;
+  display: inline-block;
+  position: absolute;
+  left: 1040px;
+  top: 350px;
+}
+
+.spaceship {
+    width: 130px;
+    height: 130px;
+    border: 2px solid pink;
+    display: inline-block;
+    position: absolute;
+    left: 400px;
+    top: 20px;
+}
+.mathposter {
+    width: 60px;
+    height: 80px;
+    border: 2px solid pink;
+    display: inline-block;
+    position: absolute;
+    left: 550px;
+    top: 250px;
+}
+.bin {
+    width: 60px;
+    height: 80px;
+    border: 2px solid yellow;
+    display: inline-block;
+    position: absolute;
+    left: 720px;
+    top: 480px;
 }
