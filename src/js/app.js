@@ -15,6 +15,8 @@ $(() => {
   const $playAgain = $('#play-again');
   const $endTitle = $('#end-title');
   const $playAgainButton = $('#play-again');
+  const $gameTune = $('#game-tune');
+  console.log($gameTune);
 
   let playersAnswer = '';
   let currentAnswer = '';
