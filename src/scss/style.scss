@@ -76,7 +76,7 @@ body {
   .score-box {
     position: relative;
     width: 600px;
-    height: 200px;
+    height: 300px;
     margin: 20px 0;
     background: #64FD59;
     border-radius: 50% / 10%;
@@ -227,7 +227,6 @@ header {
 .acid {
   width: 40px;
   height: 40px;
-  border: 2px solid green;
   display: inline-block;
   position: absolute;
   left: 515px;
@@ -237,7 +236,6 @@ header {
 .apple {
   width: 50px;
   height: 50px;
-  border: 2px solid pink;
   display: inline-block;
   position: absolute;
   top: 905px;
@@ -247,7 +245,6 @@ header {
 .ball {
   width: 80px;
   height: 80px;
-  border: 2px solid brown;
   display: inline-block;
   position: absolute;
   top: 330px;
@@ -257,7 +254,6 @@ header {
 .clock {
   width: 50px;
   height: 50px;
-  border: 2px solid purple;
   display: inline-block;
   position: absolute;
   top: 210px;
@@ -267,7 +263,6 @@ header {
 .controller {
   width: 70px;
   height: 60px;
-  border: 2px solid yellow;
   display: inline-block;
   position: absolute;
   top: 820px;
@@ -277,7 +272,6 @@ header {
 .dinner {
   width: 140px;
   height: 70px;
-  border: 2px solid dodgerblue;
   display: inline-block;
   position: absolute;
   top: 880px;
@@ -287,7 +281,6 @@ header {
 .fish {
   width: 50px;
   height: 40px;
-  border: 2px solid red;
   display: inline-block;
   position: absolute;
   top: 420px;
@@ -297,7 +290,6 @@ header {
 .lavalamp {
   width: 60px;
   height: 110px;
-  border: 2px solid orange;
   display: inline-block;
   position: absolute;
   top: 430px;
@@ -307,7 +299,6 @@ header {
 .penguin {
   width: 50px;
   height: 70px;
-  border: 2px solid grey;
   display: inline-block;
   position: absolute;
   top: 420px;
@@ -317,7 +308,6 @@ header {
 .pokemon {
   width: 100px;
   height: 100px;
-  border: 2px solid darkgreen;
   display: inline-block;
   position: absolute;
   top: 680px;
@@ -327,7 +317,6 @@ header {
 .science {
   width: 50px;
   height: 80px;
-  border: 2px solid lightblue;
   display: inline-block;
   position: absolute;
   top: 580px;
@@ -337,7 +326,6 @@ header {
 .slipper {
   width: 50px;
   height: 60px;
-  border: 2px solid darkblue;
   display: inline-block;
   position: absolute;
   top: 875px;
@@ -348,7 +336,6 @@ header {
 .spock {
   width: 44px;
   height: 60px;
-  border: 2px solid blue;
   display: inline-block;
   position: absolute;
   left: 1009px;
@@ -358,7 +345,6 @@ header {
 .teddy {
   width: 200px;
   height: 80px;
-  border: 2px solid darkred;
   display: inline-block;
   position: absolute;
   top: 600px;
@@ -368,7 +354,6 @@ header {
 .vader {
   width: 120px;
   height: 120px;
-  border: 2px solid gold;
   border-radius: 100px;
   display: inline-block;
   position: absolute;
@@ -379,7 +364,6 @@ header {
 .spaceship {
     width: 130px;
     height: 130px;
-    border: 2px solid pink;
     display: inline-block;
     position: absolute;
     left: 400px;
@@ -388,7 +372,6 @@ header {
 .mathposter {
     width: 60px;
     height: 80px;
-    border: 2px solid pink;
     display: inline-block;
     position: absolute;
     left: 550px;
@@ -397,9 +380,35 @@ header {
 .bin {
     width: 60px;
     height: 80px;
-    border: 2px solid yellow;
     display: inline-block;
     position: absolute;
     left: 720px;
     top: 480px;
+}
+
+//Animation
+
+.shake{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }

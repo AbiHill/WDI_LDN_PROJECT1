@@ -15,8 +15,9 @@ $(() => {
   const $playAgain = $('#play-again');
   const $endTitle = $('#end-title');
   const $playAgainButton = $('#play-again');
-  const $gameTune = $('#game-tune');
-  console.log($gameTune);
+  const $scoreEnough = $('#scoreEnough');
+  const $gameTune = $('#game-tune')[0];
+  const $timeGlobe = $('#timeGlobe');
 
   let playersAnswer = '';
   let currentAnswer = '';
@@ -24,7 +25,7 @@ $(() => {
   let score = 0;
 
   //Toys Object Array
-  const toys = [{
+  let toys = [{
     name: 'ball',
     image: '/images/ball.png',
     answer: 'ball'
@@ -117,14 +118,31 @@ $(() => {
       $timer.text(start);
     }, 800);
   }
-  let time = 60;
+  let time = 20;
   //StartClock Function
   function startTimer(){
     $timer.css('color','black');
     // change this to the 3 second countdown
     const timerRunning = setInterval(() => {
       time -= 1;
-      if (time === 0 || toys.length === 0) {
+      if (time === 10) {
+        $timeGlobe.addClass('shake');
+        $timer.css('color','red');
+      } if (time === 0) {
+        clearInterval(timerRunning);
+        if (score >= 15) {
+          $endTitle.text('TIME/S UP');
+          $scoreModal.css('display','flex');
+          $scoreEnough.text('CONGRATS! You scored more than 16. Head to the next level!');
+          $playAgainButton.text('Next Level >');
+          $endScore.text(score);
+        } else {
+          $endTitle.text('TIME/S UP');
+          $scoreModal.css('display','flex');
+          $scoreEnough.text('Try again Pal! You need to find more than 16 to get to the next level');
+          $endScore.text(score);
+        }
+      } if (toys.length === 0) {
         clearInterval(timerRunning);
       }
       $timer.text(time);
@@ -149,6 +167,7 @@ $(() => {
     threeTwoOne();
     $game.css('display', 'block');
     $startModal.css('display','none');
+    $gameTune.play();
   }
 
   //Click check answer
@@ -156,13 +175,17 @@ $(() => {
 
   function checkAnswer(e) {
     playersAnswer = $(e.target).attr('class');
-
     if(currentAnswer === playersAnswer) {
+      $(e.target).css({
+        backgroundImage: 'url(/images/bam.png)',
+        backgroundRepeat: 'no-repeat'
+      });
       toys.splice(randomIndexNumber, 1);
       score++;
       $score.text(score);
       if (toys.length === 0) {
-        $endTitle.text('YOU DID IT!');
+        $endTitle.text('YOU DID IT WITH ' + time + ' SECONDS REMAINING!');
+        $scoreEnough.text('Head to the next level!');
         $playAgainButton.text('Next Level >');
         $scoreModal.css('display','flex');
         $endScore.text(score);
@@ -170,14 +193,97 @@ $(() => {
         randomToyGenerator();
       }
     }
+  }
 
-    //Click playagain button
-    $playAgain.on('click',playAgain());
+  //Click playagain button
+  $playAgain.on('click',playAgain);
 
-    function playAgain() {
-      console.log('they want to play again');
+  function playAgain(){
+    time = 60;
+    score = 0;
+    startGame();
+    $scoreModal.css('display','none');
+    $score.text(0);
+    $timeGlobe.removeClass('shake');
+    $items.children().css({
+      backgroundImage: 'none'
+    });
+    toys = [{
+      name: 'ball',
+      image: '/images/ball.png',
+      answer: 'ball'
+    }, {
+      name: 'acid',
+      image: '/images/acid.png',
+      answer: 'acid'
+    }, {
+      name: 'fish',
+      image: '/images/fish.png',
+      answer: 'fish'
+    }, {
+      name: 'spock',
+      image: '/images/spock.png',
+      answer: 'spock'
+    }, {
+      name: 'apple',
+      image: '/images/apple.png',
+      answer: 'apple'
+    }, {
+      name: 'clock',
+      image: '/images/clock.png',
+      answer: 'clock'
+    }, {
+      name: 'controller',
+      image: '/images/controller.png',
+      answer: 'controller'
+    }, {
+      name: 'dinner',
+      image: '/images/dinner.png',
+      answer: 'dinner'
+    }, {
+      name: 'lavalamp',
+      image: '/images/lavalamp.png',
+      answer: 'lavalamp'
+    }, {
+      name: 'penguin',
+      image: '/images/penguin.png',
+      answer: 'penguin'
+    }, {
+      name: 'pokemon',
+      image: '/images/pokemon.png',
+      answer: 'pokemon'
+    }, {
+      name: 'science',
+      image: '/images/science.png',
+      answer: 'science'
+    }, {
+      name: 'slipper',
+      image: '/images/slipper.png',
+      answer: 'slipper'
+    }, {
+      name: 'teddy',
+      image: '/images/teddy.png',
+      answer: 'teddy'
+    }, {
+      name: 'vader',
+      image: '/images/vader.png',
+      answer: 'vader'
+    },
+    {
+      name: 'spaceship',
+      image: '/images/spaceship.png',
+      answer: 'spaceship'
+    },
+    {
+      name: 'mathposter',
+      image: '/images/mathposter.png',
+      answer: 'mathposter'
+    }, {
+      name: 'bin',
+      image: '/images/bin.png',
+      answer: 'bin'
     }
-
+    ];
 
   }
 
