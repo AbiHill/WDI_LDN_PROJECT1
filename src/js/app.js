@@ -23,9 +23,11 @@ $(() => {
   let currentAnswer = '';
   let randomIndexNumber = 0;
   let score = 0;
+  let toys = [];
+  let gameInPlay = false;
 
   //Toys Object Array
-  let toys = [{
+  const allToys = [{
     name: 'ball',
     image: '/images/ball.png',
     answer: 'ball'
@@ -99,8 +101,8 @@ $(() => {
     name: 'bin',
     image: '/images/bin.png',
     answer: 'bin'
-  }
-  ];
+  }];
+
   // threeTwoOne Function
   function threeTwoOne(){
     $timer.css('color','#D20010', 'font-size', '15px');
@@ -109,6 +111,7 @@ $(() => {
     const startRunning = setInterval(() => {
       start -= 1;
       if (start === 0) {
+        gameInPlay = true;
         randomToyGenerator();
         start = 'GO!';
         clearInterval(startRunning);
@@ -154,6 +157,7 @@ $(() => {
 
   //Random Toy Generator Function
   function randomToyGenerator(){
+    if(!gameInPlay)return false;
     randomIndexNumber = Math.floor(Math.random()*toys.length);
     const currentToyImage = toys[randomIndexNumber].image;
     $currentToy.attr('src', currentToyImage);
@@ -164,6 +168,7 @@ $(() => {
   $go.on('click',startGame);
 
   function startGame() {
+    toys = allToys.slice(0);
     threeTwoOne();
     $game.css('display', 'block');
     $startModal.css('display','none');
@@ -174,6 +179,7 @@ $(() => {
   $items.children().on('click', checkAnswer);
 
   function checkAnswer(e) {
+    if(!gameInPlay)return false;
     playersAnswer = $(e.target).attr('class');
     if(currentAnswer === playersAnswer) {
       $(e.target).css({
@@ -199,6 +205,7 @@ $(() => {
   $playAgain.on('click',playAgain);
 
   function playAgain(){
+    gameInPlay = false;
     time = 60;
     score = 0;
     startGame();
@@ -208,84 +215,9 @@ $(() => {
     $items.children().css({
       backgroundImage: 'none'
     });
-    toys = [{
-      name: 'ball',
-      image: '/images/ball.png',
-      answer: 'ball'
-    }, {
-      name: 'acid',
-      image: '/images/acid.png',
-      answer: 'acid'
-    }, {
-      name: 'fish',
-      image: '/images/fish.png',
-      answer: 'fish'
-    }, {
-      name: 'spock',
-      image: '/images/spock.png',
-      answer: 'spock'
-    }, {
-      name: 'apple',
-      image: '/images/apple.png',
-      answer: 'apple'
-    }, {
-      name: 'clock',
-      image: '/images/clock.png',
-      answer: 'clock'
-    }, {
-      name: 'controller',
-      image: '/images/controller.png',
-      answer: 'controller'
-    }, {
-      name: 'dinner',
-      image: '/images/dinner.png',
-      answer: 'dinner'
-    }, {
-      name: 'lavalamp',
-      image: '/images/lavalamp.png',
-      answer: 'lavalamp'
-    }, {
-      name: 'penguin',
-      image: '/images/penguin.png',
-      answer: 'penguin'
-    }, {
-      name: 'pokemon',
-      image: '/images/pokemon.png',
-      answer: 'pokemon'
-    }, {
-      name: 'science',
-      image: '/images/science.png',
-      answer: 'science'
-    }, {
-      name: 'slipper',
-      image: '/images/slipper.png',
-      answer: 'slipper'
-    }, {
-      name: 'teddy',
-      image: '/images/teddy.png',
-      answer: 'teddy'
-    }, {
-      name: 'vader',
-      image: '/images/vader.png',
-      answer: 'vader'
-    },
-    {
-      name: 'spaceship',
-      image: '/images/spaceship.png',
-      answer: 'spaceship'
-    },
-    {
-      name: 'mathposter',
-      image: '/images/mathposter.png',
-      answer: 'mathposter'
-    }, {
-      name: 'bin',
-      image: '/images/bin.png',
-      answer: 'bin'
-    }
-    ];
+    toys = allToys.slice(0);
+    $currentToy.attr('src', '/images/question-mark.png');
 
   }
-
 
 });
