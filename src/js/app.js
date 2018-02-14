@@ -31,6 +31,7 @@ $(() => {
   let currentAnswer = '';
   let randomIndexNumber = 0;
   let randomSoundIndexNumber = 0;
+  let randomSoundIndexNumberTwo = 0;
   let score = 0;
   let toys = [];
   let gameInPlay = false;
@@ -117,80 +118,54 @@ $(() => {
   }];
 
   const allToysLevelTwo = [{
-    name: 'ball',
-    image: '/images/ball.png',
-    answer: 'ball'
+    name: 'book',
+    image: '/images/level-two-toys/book.png',
+    answer: 'book'
   }, {
-    name: 'acid',
-    image: '/images/acid.png',
-    answer: 'acid'
+    name: 'bottle',
+    image: '/images/level-two-toys/bottle.png',
+    answer: 'bottle'
 
   }, {
-    name: 'fish',
-    image: '/images/fish.png',
-    answer: 'fish'
-  }, {
-    name: 'spock',
-    image: '/images/spock.png',
-    answer: 'spock'
-  }, {
-    name: 'apple',
-    image: '/images/apple.png',
-    answer: 'apple'
-  }, {
     name: 'clock',
-    image: '/images/clock.png',
+    image: '/images/level-two-toys/clock.png',
     answer: 'clock'
   }, {
-    name: 'controller',
-    image: '/images/controller.png',
-    answer: 'controller'
+    name: 'cup',
+    image: '/images/level-two-toys/cup.png',
+    answer: 'cup'
   }, {
-    name: 'dinner',
-    image: '/images/dinner.png',
-    answer: 'dinner'
+    name: 'cusion',
+    image: '/images/level-two-toys/cusion.png',
+    answer: 'cusion'
   }, {
-    name: 'lavalamp',
-    image: '/images/lavalamp.png',
-    answer: 'lavalamp'
-  }, {
-    name: 'penguin',
-    image: '/images/penguin.png',
-    answer: 'penguin'
-  }, {
-    name: 'pokemon',
-    image: '/images/pokemon.png',
-    answer: 'pokemon'
-  }, {
-    name: 'science',
-    image: '/images/science.png',
-    answer: 'science'
+    name: 'pot',
+    image: '/images/level-two-toys/pot.png',
+    answer: 'pot'
   }, {
     name: 'slipper',
-    image: '/images/slipper.png',
+    image: '/images/level-two-toys/slipper.png',
     answer: 'slipper'
   }, {
-    name: 'teddy',
-    image: '/images/teddy.png',
-    answer: 'teddy'
+    name: 'soap',
+    image: '/images/level-two-toys/soap.png',
+    answer: 'soap'
   }, {
-    name: 'vader',
-    image: '/images/vader.png',
-    answer: 'vader'
-  },
-  {
-    name: 'spaceship',
-    image: '/images/spaceship.png',
-    answer: 'spaceship'
-  },
-  {
-    name: 'mathposter',
-    image: '/images/mathposter.png',
-    answer: 'mathposter'
+    name: 'sock',
+    image: '/images/level-two-toys/sock.png',
+    answer: 'sock'
   }, {
-    name: 'bin',
-    image: '/images/bin.png',
-    answer: 'bin'
+    name: 'spatu',
+    image: '/images/level-two-toys/spatu.png',
+    answer: 'spatu'
+  }, {
+    name: 'sugar',
+    image: '/images/level-two-toys/sugar.png',
+    answer: 'sugar'
+  }, {
+    name: 'vase',
+    image: '/images/level-two-toys/vase.png',
+    answer: 'vase'
   }];
 
   //Random Sound Generator
@@ -333,6 +308,15 @@ $(() => {
     $items.css('display','none');
     $scoreModal.css('display','none');
     $itemsLevelTwo.css('display','block');
+    $gameTune.pause();
+    randomToyGeneratorTwo();
+  }
+
+  function randomToyGeneratorTwo(){
+    randomIndexNumberTwo = Math.floor(Math.random()*allToysLevelTwo.length);
+    const currentToyImage = allToysLevelTwo[randomIndexNumber].image;
+    $currentToy.attr('src', currentToyImage);
+    currentAnswer = toys[randomIndexNumber].answer;
   }
 
 });
