@@ -18,13 +18,18 @@ $(() => {
   const $scoreEnough = $('#scoreEnough');
   const $gameTune = $('#game-tune')[0];
   const $timeGlobe = $('#timeGlobe');
+  const $soundOne = $('#sound-one')[0];
+  const $soundTwo = $('#sound-two')[0];
+  const $soundThree = $('#sound-three')[0];
 
   let playersAnswer = '';
   let currentAnswer = '';
   let randomIndexNumber = 0;
+  let randomSoundIndexNumber = 0;
   let score = 0;
   let toys = [];
   let gameInPlay = false;
+
 
   //Toys Object Array
   const allToys = [{
@@ -35,6 +40,7 @@ $(() => {
     name: 'acid',
     image: '/images/acid.png',
     answer: 'acid'
+
   }, {
     name: 'fish',
     image: '/images/fish.png',
@@ -102,6 +108,18 @@ $(() => {
     image: '/images/bin.png',
     answer: 'bin'
   }];
+
+  //Random Sound Generator
+
+  let sounds = [$soundOne, $soundTwo, $soundThree];
+
+  function randomSoundGenerator(){
+    randomSoundIndexNumber = Math.floor(Math.random()*sounds.length);
+    const currentSound = sounds[randomSoundIndexNumber];
+    currentSound.play();
+  }
+
+
 
   // threeTwoOne Function
   function threeTwoOne(){
@@ -182,6 +200,7 @@ $(() => {
     if(!gameInPlay)return false;
     playersAnswer = $(e.target).attr('class');
     if(currentAnswer === playersAnswer) {
+      randomSoundGenerator();
       $(e.target).css({
         backgroundImage: 'url(/images/bam.png)',
         backgroundRepeat: 'no-repeat'

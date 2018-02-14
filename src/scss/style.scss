@@ -8,7 +8,9 @@ body {
   overflow-x: scroll;
   margin: 0;
   font-family: 'Russo One', sans-serif;
+  cursor: pointer;
 }
+
 
 // MODAL
 
@@ -39,12 +41,16 @@ body {
     h1, h2 {
       text-align: center;
       position: relative;
+      margin: 15px;
     }
 
     p {
+      font-size: 15px;
       text-align: center;
-      padding: 30px;
+      padding: 15px;
       position: relative;
+      margin: 0;
+      line-height: 1.2;
     }
     button {
       background-color: black;
@@ -54,9 +60,12 @@ body {
       margin: 0 auto;
       border-radius: 10px;
       position: relative;
+      border: 0;
+      font-family: 'Russo One', sans-serif;
+      padding: 8px;
+      font-size: 15px;
     }
   }
-
 }
 
 .score-modal {
