@@ -31,7 +31,6 @@ $(() => {
   let currentAnswer = '';
   let randomIndexNumber = 0;
   let randomSoundIndexNumber = 0;
-  let randomSoundIndexNumberTwo = 0;
   let score = 0;
   let toys = [];
   let gameInPlay = false;
@@ -127,9 +126,9 @@ $(() => {
     answer: 'bottle'
 
   }, {
-    name: 'clock',
+    name: 'clock-two',
     image: '/images/level-two-toys/clock.png',
-    answer: 'clock'
+    answer: 'clock-two'
   }, {
     name: 'cup',
     image: '/images/level-two-toys/cup.png',
@@ -143,9 +142,9 @@ $(() => {
     image: '/images/level-two-toys/pot.png',
     answer: 'pot'
   }, {
-    name: 'slipper',
+    name: 'slipper-two',
     image: '/images/level-two-toys/slipper.png',
-    answer: 'slipper'
+    answer: 'slipper-two'
   }, {
     name: 'soap',
     image: '/images/level-two-toys/soap.png',
@@ -166,6 +165,7 @@ $(() => {
     name: 'vase',
     image: '/images/level-two-toys/vase.png',
     answer: 'vase'
+
   }];
 
   //Random Sound Generator
@@ -283,7 +283,7 @@ $(() => {
 
   function playAgain(){
     gameInPlay = false;
-    time = 60;
+    time = 30;
     score = 0;
     startGame();
     $scoreModal.css('display','none');
@@ -296,27 +296,103 @@ $(() => {
     $currentToy.attr('src', '/images/question-mark.png');
   }
 
-  //Level Two
+  //------------------Level Two Go ------------------------------------
   $levelTwo.on('click', runLevelTwo);
 
   function runLevelTwo(){
     $body.css('backgroundImage', 'url(/images/bedroom-two.jpg)');
     gameInPlay = false;
-    time = 60;
+    time = 20;
     score = 0;
     $score.text(0);
     $items.css('display','none');
     $scoreModal.css('display','none');
     $itemsLevelTwo.css('display','block');
     $gameTune.pause();
-    randomToyGeneratorTwo();
+    threeTwoOneLevelTwo();
+    $currentToy.attr('src', '/images/question-mark.png');
   }
 
   function randomToyGeneratorTwo(){
-    randomIndexNumberTwo = Math.floor(Math.random()*allToysLevelTwo.length);
-    const currentToyImage = allToysLevelTwo[randomIndexNumber].image;
+    toys = allToysLevelTwo.slice(0);
+    randomIndexNumber = Math.floor(Math.random()*toys.length);
+    const currentToyImage = toys[randomIndexNumber].image;
     $currentToy.attr('src', currentToyImage);
     currentAnswer = toys[randomIndexNumber].answer;
+  }
+
+  $itemsLevelTwo.children().on('click', checkAnswerTwo);
+
+  function checkAnswerTwo(e) {
+    playersAnswer = $(e.target).attr('class');
+    if(currentAnswer === playersAnswer) {
+      $(e.target).css({
+        backgroundImage: 'url(/images/bam.png)',
+        backgroundRepeat: 'no-repeat'
+      });
+      toys.splice(randomIndexNumber, 1);
+      score++;
+      $score.text(score);
+      if (toys.length === 0) {
+        $endTitle.text('YOU DID IT WITH ' + time + ' SECONDS REMAINING!');
+        $scoreEnough.text('Head to the next level!');
+        $playAgainButton.text('Next Level >');
+        $scoreModal.css('display','flex');
+        $endScore.text(score);
+      } else {
+        randomToyGeneratorTwo();
+      }
+    }
+  }
+
+  function threeTwoOneLevelTwo(){
+    $timer.css('color','#D20010', 'font-size', '15px');
+    let start = 3;
+    // change this to the 3 second countdown
+    const startRunning = setInterval(() => {
+      start -= 1;
+      if (start === 0) {
+        $goSound.play();
+        randomToyGeneratorTwo();
+        start = 'GO!';
+        clearInterval(startRunning);
+        startTimerTwo();
+        setTimeout(() => $threeTwoOne.css('display','none'),1000);
+      }
+      $timer.text(start);
+    }, 800);
+  }
+  // Start Timer Two 30 seconds
+  function startTimerTwo(){
+    $timer.css('color','black');
+    const timerRunning = setInterval(() => {
+      time -= 1;
+      if (time === 10) {
+        $timeGlobe.addClass('shake');
+        $timer.css('color','red');
+      } if (time === 0) {
+        clearInterval(timerRunning);
+        if (score >= 16) {
+          $endTitle.text('TIME\'S UP');
+          $scoreModal.css({
+            display: 'flex',
+            backgroundColor: 'blue'
+          });
+          $scoreEnough.text('CONGRATS! You Won!');
+          $playAgainButton.css('display','none');
+          $levelTwo.css('display','block');
+          $endScore.text(score);
+        } else {
+          $endTitle.text('TIME\'S UP');
+          $scoreModal.css('display','flex');
+          $scoreEnough.text('Try again Pal! You need to find more than 16 to get to win');
+          $endScore.text(score);
+        }
+      } if (toys.length === 0) {
+        clearInterval(timerRunning);
+      }
+      $timer.text(time);
+    }, 1000);
   }
 
 });
