@@ -21,7 +21,12 @@ $(() => {
   const $soundOne = $('#sound-one')[0];
   const $soundTwo = $('#sound-two')[0];
   const $soundThree = $('#sound-three')[0];
+  const $goSound = $('#goSound')[0];
+  const $levelTwo = $('#level-two');
+  const $body = $('body');
+  const $itemsLevelTwo = $('#items-level-two');
 
+  //Variables
   let playersAnswer = '';
   let currentAnswer = '';
   let randomIndexNumber = 0;
@@ -29,6 +34,8 @@ $(() => {
   let score = 0;
   let toys = [];
   let gameInPlay = false;
+  const sounds = [$soundOne, $soundTwo, $soundThree];
+
 
 
   //Toys Object Array
@@ -109,10 +116,84 @@ $(() => {
     answer: 'bin'
   }];
 
+  const allToysLevelTwo = [{
+    name: 'ball',
+    image: '/images/ball.png',
+    answer: 'ball'
+  }, {
+    name: 'acid',
+    image: '/images/acid.png',
+    answer: 'acid'
+
+  }, {
+    name: 'fish',
+    image: '/images/fish.png',
+    answer: 'fish'
+  }, {
+    name: 'spock',
+    image: '/images/spock.png',
+    answer: 'spock'
+  }, {
+    name: 'apple',
+    image: '/images/apple.png',
+    answer: 'apple'
+  }, {
+    name: 'clock',
+    image: '/images/clock.png',
+    answer: 'clock'
+  }, {
+    name: 'controller',
+    image: '/images/controller.png',
+    answer: 'controller'
+  }, {
+    name: 'dinner',
+    image: '/images/dinner.png',
+    answer: 'dinner'
+  }, {
+    name: 'lavalamp',
+    image: '/images/lavalamp.png',
+    answer: 'lavalamp'
+  }, {
+    name: 'penguin',
+    image: '/images/penguin.png',
+    answer: 'penguin'
+  }, {
+    name: 'pokemon',
+    image: '/images/pokemon.png',
+    answer: 'pokemon'
+  }, {
+    name: 'science',
+    image: '/images/science.png',
+    answer: 'science'
+  }, {
+    name: 'slipper',
+    image: '/images/slipper.png',
+    answer: 'slipper'
+  }, {
+    name: 'teddy',
+    image: '/images/teddy.png',
+    answer: 'teddy'
+  }, {
+    name: 'vader',
+    image: '/images/vader.png',
+    answer: 'vader'
+  },
+  {
+    name: 'spaceship',
+    image: '/images/spaceship.png',
+    answer: 'spaceship'
+  },
+  {
+    name: 'mathposter',
+    image: '/images/mathposter.png',
+    answer: 'mathposter'
+  }, {
+    name: 'bin',
+    image: '/images/bin.png',
+    answer: 'bin'
+  }];
+
   //Random Sound Generator
-
-  let sounds = [$soundOne, $soundTwo, $soundThree];
-
   function randomSoundGenerator(){
     randomSoundIndexNumber = Math.floor(Math.random()*sounds.length);
     const currentSound = sounds[randomSoundIndexNumber];
@@ -121,7 +202,7 @@ $(() => {
 
 
 
-  // threeTwoOne Function
+  // Three Two One count down Function
   function threeTwoOne(){
     $timer.css('color','#D20010', 'font-size', '15px');
     let start = 3;
@@ -129,6 +210,7 @@ $(() => {
     const startRunning = setInterval(() => {
       start -= 1;
       if (start === 0) {
+        $goSound.play();
         gameInPlay = true;
         randomToyGenerator();
         start = 'GO!';
@@ -139,11 +221,11 @@ $(() => {
       $timer.text(start);
     }, 800);
   }
-  let time = 20;
-  //StartClock Function
+
+  let time = 30;
+  // 30 seconds count down Function
   function startTimer(){
     $timer.css('color','black');
-    // change this to the 3 second countdown
     const timerRunning = setInterval(() => {
       time -= 1;
       if (time === 10) {
@@ -151,14 +233,15 @@ $(() => {
         $timer.css('color','red');
       } if (time === 0) {
         clearInterval(timerRunning);
-        if (score >= 15) {
-          $endTitle.text('TIME/S UP');
+        if (score >= 16) {
+          $endTitle.text('TIME\'S UP');
           $scoreModal.css('display','flex');
           $scoreEnough.text('CONGRATS! You scored more than 16. Head to the next level!');
-          $playAgainButton.text('Next Level >');
+          $playAgainButton.css('display','none');
+          $levelTwo.css('display','block');
           $endScore.text(score);
         } else {
-          $endTitle.text('TIME/S UP');
+          $endTitle.text('TIME\'S UP');
           $scoreModal.css('display','flex');
           $scoreEnough.text('Try again Pal! You need to find more than 16 to get to the next level');
           $endScore.text(score);
@@ -170,7 +253,7 @@ $(() => {
     }, 1000);
   }
 
-  //Skip button
+  //Skip Button
   $currentToy.on('click', randomToyGenerator);
 
   //Random Toy Generator Function
@@ -193,7 +276,7 @@ $(() => {
     $gameTune.play();
   }
 
-  //Click check answer
+  //When an item is clicked, check the answer
   $items.children().on('click', checkAnswer);
 
   function checkAnswer(e) {
@@ -220,7 +303,7 @@ $(() => {
     }
   }
 
-  //Click playagain button
+  //Click play Again button
   $playAgain.on('click',playAgain);
 
   function playAgain(){
@@ -236,7 +319,20 @@ $(() => {
     });
     toys = allToys.slice(0);
     $currentToy.attr('src', '/images/question-mark.png');
+  }
 
+  //Level Two
+  $levelTwo.on('click', runLevelTwo);
+
+  function runLevelTwo(){
+    $body.css('backgroundImage', 'url(/images/bedroom-two.jpg)');
+    gameInPlay = false;
+    time = 60;
+    score = 0;
+    $score.text(0);
+    $items.css('display','none');
+    $scoreModal.css('display','none');
+    $itemsLevelTwo.css('display','block');
   }
 
 });

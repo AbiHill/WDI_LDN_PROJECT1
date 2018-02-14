@@ -99,20 +99,25 @@ body {
     }
 
     p {
+      font-size: 15px;
       text-align: center;
+      padding: 15px;
       position: relative;
-      font-size: 30px;
+      margin: 0;
+      line-height: 1.2;
     }
     button {
       background-color: black;
       width: 200px;
-      padding: 10px;
       color: white;
       display: block;
       margin: 0 auto;
-      border-radius: 5px;
+      border-radius: 10px;
       position: relative;
       border: 0;
+      font-family: 'Russo One', sans-serif;
+      padding: 8px;
+      font-size: 15px;
     }
   }
 
@@ -394,6 +399,134 @@ header {
     left: 720px;
     top: 480px;
 }
+
+// Toy Level Two Item Divs
+
+.items-level-two {
+  position: relative;
+  display: none;
+}
+
+.book {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: absolute;
+  left: 515px;
+  top: 500px;
+  border: 2px solid pink;
+}
+
+.bottle {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+  top: 905px;
+  left: 1085px;
+  border: 2px solid pink;
+}
+
+.clock-two {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  position: absolute;
+  top: 330px;
+  left: 65px;
+  border: 2px solid pink;
+}
+
+.cup {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+  top: 210px;
+  left: 395px;
+  border: 2px solid pink;
+}
+
+.cusion {
+  width: 70px;
+  height: 60px;
+  display: inline-block;
+  position: absolute;
+  top: 820px;
+  left: 945px;
+  border: 2px solid pink;
+}
+
+.pot {
+  width: 140px;
+  height: 70px;
+  display: inline-block;
+  position: absolute;
+  top: 880px;
+  left: 675px;
+  border: 2px solid pink;
+}
+
+.slipper-two {
+  width: 50px;
+  height: 40px;
+  display: inline-block;
+  position: absolute;
+  top: 420px;
+  left: 355px;
+  border: 2px solid pink;
+}
+
+.soap {
+  width: 60px;
+  height: 110px;
+  display: inline-block;
+  position: absolute;
+  top: 430px;
+  left: 295px;
+  border: 2px solid pink;
+}
+
+.sock {
+  width: 50px;
+  height: 70px;
+  display: inline-block;
+  position: absolute;
+  top: 420px;
+  left: 555px;
+  border: 2px solid pink;
+}
+
+.spatu {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  position: absolute;
+  top: 680px;
+  left: 555px;
+  border: 2px solid pink;
+}
+
+.sugar {
+  width: 50px;
+  height: 80px;
+  display: inline-block;
+  position: absolute;
+  top: 580px;
+  left: 1215px;
+  border: 2px solid pink;
+}
+
+.vase {
+  width: 50px;
+  height: 60px;
+  display: inline-block;
+  position: absolute;
+  top: 875px;
+  left: 275px;
+  border: 2px solid pink;
+}
+
 
 //Animation
 
