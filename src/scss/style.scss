@@ -222,6 +222,26 @@ header {
   border-bottom: 20px solid transparent;
 }
 
+.pointerTwo {
+  width: 150px;
+  height: 40px;
+  position: relative;
+  background: #a64bcc;
+}
+
+
+.pointerTwo:before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #a64bcc;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
 // Three two one count down
 
 
@@ -368,7 +388,6 @@ header {
 .vader {
   width: 120px;
   height: 120px;
-  border-radius: 100px;
   display: inline-block;
   position: absolute;
   left: 1040px;
@@ -414,7 +433,6 @@ header {
     position: absolute;
     left: 515px;
     top: 26px;
-    border: 2px solid pink;
 }
 
 .bottle {
@@ -424,7 +442,6 @@ header {
     position: absolute;
     top: 137px;
     left: 881px;
-    border: 2px solid pink;
 }
 
 .clock-two {
@@ -434,7 +451,6 @@ header {
     position: absolute;
     top: 328px;
     left: 765px;
-    border: 2px solid pink;
 }
 
 .cup {
@@ -444,7 +460,6 @@ header {
     position: absolute;
     top: 627px;
     left: 653px;
-    border: 2px solid pink;
 }
 
 .cusion {
@@ -454,7 +469,6 @@ header {
     position: absolute;
     top: 654px;
     left: 323px;
-    border: 2px solid pink;
 }
 
 .pot {
@@ -464,7 +478,6 @@ header {
     position: absolute;
     top: 248px;
     left: 359px;
-    border: 2px solid pink;
 }
 
 .slipper-two {
@@ -474,17 +487,15 @@ header {
     position: absolute;
     top: 671px;
     left: 770px;
-    border: 2px solid pink;
 }
 
 .soap {
-    width: 39px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     display: inline-block;
     position: absolute;
     top: 401px;
     left: 78px;
-    border: 2px solid pink;
 }
 
 .sock {
@@ -494,7 +505,6 @@ header {
     position: absolute;
     top: 484px;
     left: 605px;
-    border: 2px solid pink;
 }
 
 .spatu {
@@ -504,7 +514,6 @@ header {
     position: absolute;
     top: 184px;
     left: 510px;
-    border: 2px solid pink;
 }
 
 .sugar {
@@ -514,7 +523,6 @@ header {
     position: absolute;
     top: 652px;
     left: 529px;
-    border: 2px solid pink;
 }
 
 .vase {
@@ -524,7 +532,6 @@ header {
     position: absolute;
     top: 327px;
     left: 525px;
-    border: 2px solid pink;
 }
 
 

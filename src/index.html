@@ -30,7 +30,7 @@
   <div class="game" id="game">
     <header>
       <div class="top-left">
-        <div class="pointer">
+        <div class="pointer" id="pointer">
           <p>Score: <span id="score">0</span></p>
         </div>
       </div>
@@ -45,117 +45,137 @@
     <main>
       <audio loop id="game-tune">
         <source src="/sounds/SlowSkaGameLoop.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <audio id="sound-one">
+        <source src="/sounds/NFF-kid-attack.wav" type="audio/wav">
           Your browser does not support the audio element.
-        </audio>
-        <audio id="sound-one">
-          <source src="/sounds/NFF-kid-attack.wav" type="audio/wav">
-            Your browser does not support the audio element.
-          </audio>
-          <audio id="sound-two">
-            <source src="/sounds/NFF-ya-whoa.wav" type="audio/wav">
-              Your browser does not support the audio element.
-            </audio>
-            <audio id="sound-three">
-              <source src="/sounds/NFF-yahoo.wav" type="audio/wav">
-                Your browser does not support the audio element.
-              </audio>
-              <audio id="goSound">
-                <source src="/sounds/go.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-                </audio>
-                <div class="items">
-                  <div class="acid" id="acid">
-                  </div>
-                  <div class="apple" id="apple">
-                  </div>
-                  <div class="ball" id="ball">
+      </audio>
+      <audio id="sound-two">
+        <source src="/sounds/NFF-ya-whoa.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="sound-three">
+    <source src="/sounds/NFF-yahoo.wav" type="audio/wav">
+      Your browser does not support the audio element.
+  </audio>
+  <audio id="pop-one">
+    <source src="/sounds/popOne.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+  </audio>
+  <audio id="pop-two">
+    <source src="/sounds/popTwo.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+  </audio>
+  <audio id="pop-three">
+    <source src="/sounds/popThree.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+  </audio>
+  <audio id="winner-sound">
+    <source src="/sounds/Minimal-Funky-loop.wav" type="audio/wav">
+      Your browser does not support the audio element.
+  </audio>
+    <audio id="goSound">
+      <source src="/sounds/go.wav" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="levelTwoSound">
+      <source src="/sounds/DigitalKidLoop.wav" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="items">
+      <div class="acid" id="acid">
+      </div>
+      <div class="apple" id="apple">
+      </div>
+      <div class="ball" id="ball">
 
-                  </div>
-                  <div class="clock" id="clock">
+      </div>
+      <div class="clock" id="clock">
 
-                  </div>
-                  <div class="controller" id="controller">
+      </div>
+      <div class="controller" id="controller">
 
-                  </div>
-                  <div class="dinner" id="dinner">
+      </div>
+      <div class="dinner" id="dinner">
 
-                  </div>
-                  <div class="fish" id="fish">
+      </div>
+      <div class="fish" id="fish">
 
-                  </div>
-                  <div class="lavalamp" id="lavalamp">
+      </div>
+      <div class="lavalamp" id="lavalamp">
 
-                  </div>
-                  <div class="penguin" id="penguin">
+      </div>
+      <div class="penguin" id="penguin">
 
-                  </div>
-                  <div class="pokemon" id="pokemon">
+      </div>
+      <div class="pokemon" id="pokemon">
 
-                  </div>
-                  <div class="science" id="science">
+      </div>
+      <div class="science" id="science">
 
-                  </div>
-                  <div class="slipper" id="slipper">
+      </div>
+      <div class="slipper" id="slipper">
 
-                  </div>
-                  <div class="spock" id="spock">
-                  </div>
-                  <div class="teddy" id="teddy">
+      </div>
+      <div class="spock" id="spock">
+      </div>
+      <div class="teddy" id="teddy">
 
-                  </div>
-                  <div class="vader" id="vader">
+      </div>
+      <div class="vader" id="vader">
 
-                  </div>
-                  <div class="spaceship" id="spaceship">
+      </div>
+      <div class="spaceship" id="spaceship">
 
-                  </div>
-                  <div class="mathposter" id="mathposter">
+      </div>
+      <div class="mathposter" id="mathposter">
 
-                  </div>
-                  <div class="bin" id="bin">
-                  </div>
-                </div> <!-- /items -->
-                <div class="items-level-two" id="items-level-two">
-                  <div class="book" id="book">
-                    book
-                  </div>
-                  <div class="bottle" id="bottle">
-                    bottle
-                  </div>
-                  <div class="clock-two" id="clock-two">
-                    clock
-                  </div>
-                  <div class="cup" id="cup">
-                    cup
-                  </div>
-                  <div class="cusion" id="cusion">
-                    cusion
-                  </div>
-                  <div class="pot" id="pot">
-                    pot
-                  </div>
-                  <div class="slipper-two" id="slipper-two">
-                    slipper
-                  </div>
-                  <div class="soap" id="soap">
-                    soap
-                  </div>
-                  <div class="sock" id="sock">
-                    sock
-                  </div>
-                  <div class="spatu" id="spatu">
-                    spatu
-                  </div>
-                  <div class="sugar" id="sugar">
-                    sugar
-                  </div>
-                  <div class="vase" id="vase">
-                    vase
-                  </div>
-                </div> <!-- /items-level-two -->
-              </main>
-              <footer>
-              </footer>
-            </div> <!-- /game -->
-          </body>
-          </html>
+      </div>
+      <div class="bin" id="bin">
+      </div>
+    </div> <!-- /items -->
+      <div class="items-level-two" id="items-level-two">
+        <div class="book" id="book">
+
+        </div>
+        <div class="bottle" id="bottle">
+
+        </div>
+        <div class="clock-two" id="clock-two">
+
+        </div>
+        <div class="cup" id="cup">
+
+        </div>
+        <div class="cusion" id="cusion">
+
+        </div>
+        <div class="pot" id="pot">
+
+        </div>
+        <div class="slipper-two" id="slipper-two">
+
+        </div>
+        <div class="soap" id="soap">
+
+        </div>
+        <div class="sock" id="sock">
+
+        </div>
+        <div class="spatu" id="spatu">
+
+        </div>
+        <div class="sugar" id="sugar">
+
+        </div>
+        <div class="vase" id="vase">
+
+        </div>
+      </div> <!-- /items-level-two -->
+    </main>
+    <footer>
+    </footer>
+  </div> <!-- /game -->
+</body>
+</html>
