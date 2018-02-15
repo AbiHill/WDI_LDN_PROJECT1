@@ -365,6 +365,9 @@ $(() => {
       if (toys.length === 0) {
         $endTitle.text('YOU DID IT WITH ' + time + ' SECONDS REMAINING!');
         $scoreEnough.text('YOU WON THE GAME');
+        $scoreBox.css({backgroundImage: 'url(/images/winner.gif)', height: '420px'});
+        $winnerSound.play();
+        soundsTwo.pause();
         $playAgainButton.css('display','none');
         $playAgainTwo.css('display','none');
         $levelTwo.css('display','none');
