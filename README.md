@@ -1,14 +1,14 @@
 ![image](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
-# GA WDI-30 Project 1 - WeeWords
+# GA WDI-32 Project 1 - Find'ems
 
-For our first project, we were given four days to design and build an in-browser game using HTML, CSS and JavaScript (jQuery library used). WeeWords was a product of my own imagination, rather than a remake of an existing game. It requires the player to enter words made up of letters randomly appearing on screen, and features 3 levels with specific win conditions.
+For my first project, the requirement was to design and build an in-browser game using HTML, CSS and JavaScript (jQuery library used). Find'ems was a game I wanted to create for my nieces and was based on Where's Wally. The player has 30 seconds to find as many items as possible. The game features 2 levels with specific win conditions.
 
-##### [Visit website](https://wee-words.herokuapp.com/) for best playing experience (the game was not designed for mobile).
+##### [Visit website](https://obscure-crag-92372.herokuapp.com/) for best playing experience (the game was not designed for mobile).
 
 ---
 
-###### WeeWords takes place in a 100% CSS-built and animated environment, with the weather changing on each level as the player progresses.
+###### Find'ems takes place in a 100% CSS-built and animated environment, with the room design changing on each level as the player progresses.
 
 <p align="center"><img src="https://imgur.com/8llXrdZ.png" width="700"></p>
 

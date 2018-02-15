@@ -226,10 +226,10 @@ $(() => {
         $timer.css('color','red');
       } if (time === 0) {
         clearInterval(timerRunning);
-        if (score >= 16) {
+        if (score >= 12) {
           $endTitle.text('TIME\'S UP');
           $scoreModal.css('display','flex');
-          $scoreEnough.text('CONGRATS! You scored more than 16. Head to the next level!');
+          $scoreEnough.text('CONGRATS! You scored more than 12. Head to the next level!');
           $playAgainButton.css('display','none');
           $levelTwo.css('display','block');
           $endScore.text(score);
@@ -238,7 +238,7 @@ $(() => {
         } else {
           $endTitle.text('TIME\'S UP');
           $scoreModal.css('display','flex');
-          $scoreEnough.text('Try again Pal! You need to find more than 16 to get to the next level');
+          $scoreEnough.text('Try again Pal! You need to find more than 12 to get to the next level');
           $playAgainTwo.css('display','none');
           $endScore.text(score);
           $levelTwo.css('display','none');
