@@ -1,14 +1,14 @@
 body {
-  background-image: url(/images/background.jpg);
-  min-height: 980px;
-  min-width: 1280px;
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: cover;
-  overflow-x: scroll;
-  margin: 0;
-  font-family: 'Russo One', sans-serif;
-  cursor: pointer;
+    background-image: url(/images/background.jpg);
+    min-height: 980px;
+    min-width: 1280px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    overflow-x: scroll;
+    margin: 0;
+    font-family: 'Russo One', sans-serif;
+    cursor: pointer;
 }
 
 
@@ -27,46 +27,47 @@ body {
   border: 0;
   position: fixed;
 
-  .start-box {
-    position: relative;
-    width: 600px;
-    height: 400px;
-    margin: 20px 0;
-    background: #64FD59;
-    border-radius: 50% / 10%;
-    color: black;
-    text-align: center;
-    text-indent: .1em;
-
-    h1, h2 {
+    .start-box {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      margin: 20px 0;
+      background: #64FD59;
+      border-radius: 50% / 10%;
+      color: black;
       text-align: center;
-      position: relative;
-      margin: 15px;
-    }
+      text-indent: .1em;
 
-    p {
-      font-size: 15px;
-      text-align: center;
-      padding: 15px;
-      position: relative;
-      margin: 0;
-      line-height: 1.2;
-    }
-    button {
-      background-color: black;
-      width: 200px;
-      color: white;
-      display: block;
-      margin: 0 auto;
-      border-radius: 10px;
-      position: relative;
-      border: 0;
-      font-family: 'Russo One', sans-serif;
-      padding: 8px;
-      font-size: 15px;
+      h1, h2 {
+        text-align: center;
+        position: relative;
+        margin: 15px;
+      }
+
+      p {
+        font-size: 15px;
+        text-align: center;
+        padding: 15px;
+        position: relative;
+        margin: 0;
+        line-height: 1.2;
+      }
+
+      button {
+        background-color: black;
+        width: 200px;
+        color: white;
+        display: block;
+        margin: 0 auto;
+        border-radius: 10px;
+        position: relative;
+        border: 0;
+        font-family: 'Russo One', sans-serif;
+        padding: 8px;
+        font-size: 15px;
+      }
     }
   }
-}
 
 .score-modal {
   width: 100vw;
@@ -106,6 +107,7 @@ body {
       margin: 0;
       line-height: 1.2;
     }
+
     button {
       background-color: black;
       width: 200px;
@@ -120,7 +122,6 @@ body {
       font-size: 15px;
     }
   }
-
 }
 
 
@@ -137,16 +138,14 @@ body {
 
 
 // HIDES THE GAME & GAME WRAPPER
-.game {
-  display: none;
-}
+  .game {
+    display: none;
+  }
 
 // HEADER
-
-header {
-  display: flex;
-  position: fixed;
-
+  header {
+    display: flex;
+    position: fixed;
 
   .top-left {
     width: 200px;
@@ -158,7 +157,6 @@ header {
       font-weight: 800;
       font-family: 'Russo One', sans-serif;
     }
-
   }
 
   .top-centre {
@@ -170,7 +168,6 @@ header {
     img {
       display: block;
       margin: 0 auto;
-
     }
 
     p {
@@ -180,7 +177,6 @@ header {
       transform: translate(-50%, -50%);
       font-size: 80px;
     }
-
   }
 
 
@@ -202,61 +198,59 @@ header {
   }
 }
 
-.pointer {
-  width: 150px;
-  height: 40px;
-  position: relative;
-  background: #64FD59;
-}
+  .pointer {
+    width: 150px;
+    height: 40px;
+    position: relative;
+    background: #64FD59;
+  }
 
 
-.pointer:before {
-  content: "";
-  position: absolute;
-  right: -20px;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid #64FD59;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-}
+  .pointer:before {
+    content: "";
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid #64FD59;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+  }
 
-.pointerTwo {
-  width: 150px;
-  height: 40px;
-  position: relative;
-  background: #a64bcc;
-}
+  .pointerTwo {
+    width: 150px;
+    height: 40px;
+    position: relative;
+    background: #a64bcc;
+  }
 
 
-.pointerTwo:before {
-  content: "";
-  position: absolute;
-  right: -20px;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid #a64bcc;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-}
+  .pointerTwo:before {
+    content: "";
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid #a64bcc;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+  }
 
 // Three two one count down
 
-
-.three-two-one {
-  font-size: 50px;
-  font-weight: 800;
-  text-align: center;
-  color: #64FD59;
-}
+  .three-two-one {
+    font-size: 50px;
+    font-weight: 800;
+    text-align: center;
+    color: #64FD59;
+  }
 
 // Toy Item Divs
-
-.items {
-  position: relative;
-}
+  .items {
+    position: relative;
+  }
 
 .acid {
   width: 40px;
@@ -535,29 +529,29 @@ header {
 }
 
 
-//Animation
+//Animations
 
-.shake{
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
+  .shake{
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
 
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
 
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
   }
-}

@@ -1,3 +1,145 @@
+//Variables
+let playersAnswer = '';
+let currentAnswer = '';
+let randomIndexNumber = 0;
+let randomSoundIndexNumber = 0;
+let score = 0;
+let toys = [];
+let gameInPlay = false;
+let time = 30;
+
+
+//Toys Object Array Level One
+const allToys = [{
+  name: 'ball',
+  image: '/images/ball.png',
+  answer: 'ball'
+}, {
+  name: 'acid',
+  image: '/images/acid.png',
+  answer: 'acid'
+
+}, {
+  name: 'fish',
+  image: '/images/fish.png',
+  answer: 'fish'
+}, {
+  name: 'spock',
+  image: '/images/spock.png',
+  answer: 'spock'
+}, {
+  name: 'apple',
+  image: '/images/apple.png',
+  answer: 'apple'
+}, {
+  name: 'clock',
+  image: '/images/clock.png',
+  answer: 'clock'
+}, {
+  name: 'controller',
+  image: '/images/controller.png',
+  answer: 'controller'
+}, {
+  name: 'dinner',
+  image: '/images/dinner.png',
+  answer: 'dinner'
+}, {
+  name: 'lavalamp',
+  image: '/images/lavalamp.png',
+  answer: 'lavalamp'
+}, {
+  name: 'penguin',
+  image: '/images/penguin.png',
+  answer: 'penguin'
+}, {
+  name: 'pokemon',
+  image: '/images/pokemon.png',
+  answer: 'pokemon'
+}, {
+  name: 'science',
+  image: '/images/science.png',
+  answer: 'science'
+}, {
+  name: 'slipper',
+  image: '/images/slipper.png',
+  answer: 'slipper'
+}, {
+  name: 'teddy',
+  image: '/images/teddy.png',
+  answer: 'teddy'
+}, {
+  name: 'vader',
+  image: '/images/vader.png',
+  answer: 'vader'
+},
+{
+  name: 'spaceship',
+  image: '/images/spaceship.png',
+  answer: 'spaceship'
+},
+{
+  name: 'mathposter',
+  image: '/images/mathposter.png',
+  answer: 'mathposter'
+}, {
+  name: 'bin',
+  image: '/images/bin.png',
+  answer: 'bin'
+}];
+
+//Toys Object Array Level Two
+const allToysLevelTwo = [{
+  name: 'book',
+  image: '/images/level-two-toys/book.png',
+  answer: 'book'
+}, {
+  name: 'bottle',
+  image: '/images/level-two-toys/bottle.png',
+  answer: 'bottle'
+
+}, {
+  name: 'clock-two',
+  image: '/images/level-two-toys/clock.png',
+  answer: 'clock-two'
+}, {
+  name: 'cup',
+  image: '/images/level-two-toys/cup.png',
+  answer: 'cup'
+}, {
+  name: 'cusion',
+  image: '/images/level-two-toys/cusion.png',
+  answer: 'cusion'
+}, {
+  name: 'pot',
+  image: '/images/level-two-toys/pot.png',
+  answer: 'pot'
+}, {
+  name: 'slipper-two',
+  image: '/images/level-two-toys/slipper.png',
+  answer: 'slipper-two'
+}, {
+  name: 'soap',
+  image: '/images/level-two-toys/soap.png',
+  answer: 'soap'
+}, {
+  name: 'sock',
+  image: '/images/level-two-toys/sock.png',
+  answer: 'sock'
+}, {
+  name: 'spatu',
+  image: '/images/level-two-toys/spatu.png',
+  answer: 'spatu'
+}, {
+  name: 'sugar',
+  image: '/images/level-two-toys/sugar.png',
+  answer: 'sugar'
+}, {
+  name: 'vase',
+  image: '/images/level-two-toys/vase.png',
+  answer: 'vase'
+}];
+
+
 $(() => {
   console.log('JS Working');
 
@@ -35,165 +177,24 @@ $(() => {
   const $winnerSound = $('#winner-sound')[0];
   const $scoreP = $('#scoreP');
 
-  //Variables
-  let playersAnswer = '';
-  let currentAnswer = '';
-  let randomIndexNumber = 0;
-  let randomSoundIndexNumber = 0;
-  let score = 0;
-  let toys = [];
-  let gameInPlay = false;
+  //Dom Variables
   const sounds = [$soundOne, $soundTwo, $soundThree];
   const soundsTwo = [$popOne, $popTwo, $popThree];
 
-
-
-  //Toys Object Array
-  const allToys = [{
-    name: 'ball',
-    image: '/images/ball.png',
-    answer: 'ball'
-  }, {
-    name: 'acid',
-    image: '/images/acid.png',
-    answer: 'acid'
-
-  }, {
-    name: 'fish',
-    image: '/images/fish.png',
-    answer: 'fish'
-  }, {
-    name: 'spock',
-    image: '/images/spock.png',
-    answer: 'spock'
-  }, {
-    name: 'apple',
-    image: '/images/apple.png',
-    answer: 'apple'
-  }, {
-    name: 'clock',
-    image: '/images/clock.png',
-    answer: 'clock'
-  }, {
-    name: 'controller',
-    image: '/images/controller.png',
-    answer: 'controller'
-  }, {
-    name: 'dinner',
-    image: '/images/dinner.png',
-    answer: 'dinner'
-  }, {
-    name: 'lavalamp',
-    image: '/images/lavalamp.png',
-    answer: 'lavalamp'
-  }, {
-    name: 'penguin',
-    image: '/images/penguin.png',
-    answer: 'penguin'
-  }, {
-    name: 'pokemon',
-    image: '/images/pokemon.png',
-    answer: 'pokemon'
-  }, {
-    name: 'science',
-    image: '/images/science.png',
-    answer: 'science'
-  }, {
-    name: 'slipper',
-    image: '/images/slipper.png',
-    answer: 'slipper'
-  }, {
-    name: 'teddy',
-    image: '/images/teddy.png',
-    answer: 'teddy'
-  }, {
-    name: 'vader',
-    image: '/images/vader.png',
-    answer: 'vader'
-  },
-  {
-    name: 'spaceship',
-    image: '/images/spaceship.png',
-    answer: 'spaceship'
-  },
-  {
-    name: 'mathposter',
-    image: '/images/mathposter.png',
-    answer: 'mathposter'
-  }, {
-    name: 'bin',
-    image: '/images/bin.png',
-    answer: 'bin'
-  }];
-
-  const allToysLevelTwo = [{
-    name: 'book',
-    image: '/images/level-two-toys/book.png',
-    answer: 'book'
-  }, {
-    name: 'bottle',
-    image: '/images/level-two-toys/bottle.png',
-    answer: 'bottle'
-
-  }, {
-    name: 'clock-two',
-    image: '/images/level-two-toys/clock.png',
-    answer: 'clock-two'
-  }, {
-    name: 'cup',
-    image: '/images/level-two-toys/cup.png',
-    answer: 'cup'
-  }, {
-    name: 'cusion',
-    image: '/images/level-two-toys/cusion.png',
-    answer: 'cusion'
-  }, {
-    name: 'pot',
-    image: '/images/level-two-toys/pot.png',
-    answer: 'pot'
-  }, {
-    name: 'slipper-two',
-    image: '/images/level-two-toys/slipper.png',
-    answer: 'slipper-two'
-  }, {
-    name: 'soap',
-    image: '/images/level-two-toys/soap.png',
-    answer: 'soap'
-  }, {
-    name: 'sock',
-    image: '/images/level-two-toys/sock.png',
-    answer: 'sock'
-  }, {
-    name: 'spatu',
-    image: '/images/level-two-toys/spatu.png',
-    answer: 'spatu'
-  }, {
-    name: 'sugar',
-    image: '/images/level-two-toys/sugar.png',
-    answer: 'sugar'
-  }, {
-    name: 'vase',
-    image: '/images/level-two-toys/vase.png',
-    answer: 'vase'
-
-  }];
-
-  //Random Sound Generator
+  //Random Sound Generator one
   function randomSoundGenerator(){
     randomSoundIndexNumber = Math.floor(Math.random()*sounds.length);
     const currentSound = sounds[randomSoundIndexNumber];
     currentSound.play();
   }
-
+  //Random Sound Generator Two
   function randomSoundGeneratorTwo(){
     randomSoundIndexNumber = Math.floor(Math.random()*soundsTwo.length);
     const currentSound = soundsTwo[randomSoundIndexNumber];
     currentSound.play();
   }
 
-
-
-  // Three Two One count down Function
+  // Three Two One count down Function One
   function threeTwoOne(){
     $timer.css('color','#D20010', 'font-size', '15px');
     let start = 3;
@@ -213,8 +214,9 @@ $(() => {
     }, 800);
   }
 
-  let time = 30;
+
   // 30 seconds count down Function
+
   function startTimer(){
     $timer.css('color','black');
     const timerRunning = setInterval(() => {
@@ -262,7 +264,6 @@ $(() => {
 
   //Play Game Function
   $go.on('click',startGame);
-
   function startGame() {
     toys = allToys.slice(0);
     threeTwoOne();
@@ -302,6 +303,7 @@ $(() => {
   //Click play Again button
   $playAgain.on('click',playAgain);
 
+  //Click play Again Reset Function
   function playAgain(){
     gameInPlay = false;
     time = 30;
@@ -320,6 +322,7 @@ $(() => {
   //------------------Level Two Go ------------------------------------
   $levelTwo.on('click', runLevelTwo);
 
+  //Run Level Two Function
   function runLevelTwo(){
     $levelTwoSound.play();
     toys = allToysLevelTwo.slice(0);
@@ -342,14 +345,14 @@ $(() => {
     $timeGlobe.attr('src','/images/level-two-toys/timerTwo.png');
   }
 
+  //Level Two Toy Generator
   function randomToyGeneratorTwo(){
-    // toys = allToysLevelTwo;
     randomIndexNumber = Math.floor(Math.random()*toys.length);
     const currentToyImage = toys[randomIndexNumber].image;
     $currentToy.attr('src', currentToyImage);
     currentAnswer = toys[randomIndexNumber].answer;
   }
-
+  //When an item is clicked, check if the answer is correct
   $itemsLevelTwo.children().on('click', checkAnswerTwo);
 
   function checkAnswerTwo(e) {
@@ -378,17 +381,16 @@ $(() => {
         $endScore.css('display','none');
         $scoreEnough.css('display','none');
         $scoreP.css('display','none');
-
       } else {
         randomToyGeneratorTwo();
       }
     }
   }
-  //threeTwoOne Timer Two
+
+  //threeTwo One Timer Two
   function threeTwoOneLevelTwo(){
     $timer.css('color','#D20010', 'font-size', '15px');
     let start = 3;
-    // change this to the 3 second countdown
     const startRunning = setInterval(() => {
       start -= 1;
       if (start === 0) {
@@ -402,7 +404,7 @@ $(() => {
       $timer.text(start);
     }, 800);
   }
-  // Start Timer Two 30 seconds
+  // Start Timer Two 20 seconds
   function startTimerTwo(){
     $timer.css('color','black');
     const timerRunning = setInterval(() => {
@@ -445,6 +447,5 @@ $(() => {
 
   //Click play Again button
   $playAgainTwo.on('click',runLevelTwo);
-
 
 });
