@@ -33,6 +33,7 @@ $(() => {
   const $popTwo = $('#pop-two')[0];
   const $popThree = $('#pop-three')[0];
   const $winnerSound = $('#winner-sound')[0];
+  const $scoreP = $('#scoreP');
 
   //Variables
   let playersAnswer = '';
@@ -363,18 +364,21 @@ $(() => {
       score++;
       $score.text(score);
       if (toys.length === 0) {
-        $endTitle.text('YOU DID IT WITH ' + time + ' SECONDS REMAINING!');
-        $scoreEnough.text('YOU WON THE GAME');
+        $endTitle.text('CONGRATS! You Won!');
         $scoreBox.css({backgroundImage: 'url(/images/winner.gif)', height: '420px'});
-        $winnerSound.play();
-        soundsTwo.pause();
-        $playAgainButton.css('display','none');
-        $playAgainTwo.css('display','none');
-        $levelTwo.css('display','none');
         $scoreModal.css({
           display: 'flex'
         });
-        $endScore.text(score);
+        $winnerSound.play();
+        $levelTwoSound.pause();
+        $itemsLevelTwo.css('display','none');
+        $playAgainButton.css('display','none');
+        $playAgainTwo.css('display','none');
+        $levelTwo.css('display','none');
+        $endScore.css('display','none');
+        $scoreEnough.css('display','none');
+        $scoreP.css('display','none');
+
       } else {
         randomToyGeneratorTwo();
       }
