@@ -2,48 +2,38 @@
 
 # GA WDI-32 Project 1 - Find'ems
 
-For my first project, the requirement was to design and build an in-browser game using HTML, CSS and JavaScript (jQuery library used). Find'ems was a game I wanted to create for my nieces and was based on Where's Wally. The player has 30 seconds to find as many items as possible. The game features 2 levels with specific win conditions.
+For my first project, the requirement was to design and build an in-browser game using HTML, CSS and JavaScript (jQuery library used). Find'ems was a game I wanted to create for my niece and is based on Where's Wally. The player has 30 seconds to find as many items as possible. The game features 2 levels with specific win conditions.
 
 ##### [Visit website](https://obscure-crag-92372.herokuapp.com/) for best playing experience (the game was not designed for mobile).
 
 ---
 
-###### Find'ems takes place in a 100% CSS-built and animated environment, with the room design changing on each level as the player progresses.
+Find'ems takes place in a 100% CSS-built and animated environment, with the room design changing on each level as the player progresses.
 
-<p align="center"><img src="https://imgur.com/8llXrdZ.png" width="700"></p>
+<p align="center"><img src="https://i.imgur.com/GxdJztC.png" width="700"></p>
 
-###### Level one gives the player 30 seconds to fulfil the required score, using any letters they can see on screen. The letters are picked at random from a weighted alphabet (so that you get more E’s than Z’s etc.) and assigned a random position on screen. They shrink and fade away after a set period of time, at which point they become unavailable for use in the player’s words.
+Level one gives the player 30 seconds to find as many items as possible. The items that the player has to find are randomly generated and displayed in the top right hand corner. If the player wishes to skip an item then they can do so by clicking on it. The player must find at least 12 items in order to move to level two.
 
-<p align="center"><img src="https://imgur.com/Z2mQLZf.png" width="700"></p>
+The player must click on the item once found and another will appear in the top right hand corner.
 
-###### In level two, the difficulty increases as the player is only able to use blue letters. In level 3, the player may only use red letters and words under 4 letters long are not allowed.
+<p align="center"><img src="https://i.imgur.com/AllrrNb.png" width="700"></p>
 
-<p align="center"><img src="https://imgur.com/3yyNskp.png" width="700"></p>
+If the player does not find at least 12 items in the time frame then they are able to try again and the level resets.
 
-<p align="center"><img src="https://imgur.com/L1Ij5dt.png" width="700"></p>
+<p align="center"><img src="https://i.imgur.com/D3buf4s.png" width="700"></p>
 
-<p align="center"><img src="https://imgur.com/Fx0ZE8B.png" width="700"></p>
 
-###### The win logic requires a submitted word to fulfil a number of conditions to be passed as a valid word:
+For level two, the scene, design and sounds change. The difficulty increases as the player is only given 20 seconds to find all 12 items.
 
-###### * The word is a correctly spelt English word (checked against an array of English words).
-###### * The word is made up of letters that are present in an ever-changing array of letters in play.
-###### * The word has not previously been entered during the level.
-###### * The word consists of 4 letters or more (Level 3 only).
+<p align="center"><img src="https://i.imgur.com/40BMfNP.png" width="700"></p>
 
-```
-function returnResult() {
-  if (wordIsValid === true && invalidLetters.length === 0 && wordIsRepeat === false) {
-    $wordLog.append($(`<span>${submittedWord}</span>`).addClass('green'));
-    scoreUpdate();
-  } else {
-    $wordLog.append($(`<span>${submittedWord}</span>`).addClass('red'));
-  }
-}
-```
 
-###### If level 3 is beaten, the player is presented with a final score (the sum of each level score) and can restart the entire game and try to beat it.
+If the player does not complete level 2 they're able to play again. If the player completes level two then they are presented with a Winner modal.
+
+<p align="center"><img src="https://i.imgur.com/xgy1MxW.png" width="700"></p>
+
+<p align="center"><img src="https://i.imgur.com/N2pxY1D.png" width="700"></p>
 
 ---
 
-I was pleased with the final product, which I feel looks good an plays well. The game could be developed into a larger game with new levels and challenges to further test the player’s skills.
+I am pleased with the final game. I aim to develop the game further with new levels, challenges and functionality.
