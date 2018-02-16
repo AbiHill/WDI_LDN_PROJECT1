@@ -4,7 +4,7 @@
 
 For my first project, the requirement was to design and build an in-browser game using HTML, CSS and JavaScript (jQuery library used). Find'ems was a game I wanted to create for my niece and is based on Where's Wally. The player has 30 seconds to find as many items as possible. The game features 2 levels with specific win conditions.
 
-##### [Visit website](https://obscure-crag-92372.herokuapp.com/) for best playing experience (the game was not designed for mobile).
+##### [Visit website](https://findems.herokuapp.com/) for best playing experience (the game was not designed for mobile).
 
 ---
 
