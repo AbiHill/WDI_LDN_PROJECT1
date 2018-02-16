@@ -9,115 +9,115 @@
     <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
   </head>
   <body>
-    <div class="start-modal" id="start-modal">
-      <div id="startbox" class="start-box">
-        <h1>Find'ems</h1>
-        <h2>How to play:</h2>
-        <p>The aim of the game is to find all of the hidden items in the room. </br></br>You will be displayed an item in the top right hand corner. Look for the item in the room and click on it once you find it. If you wish to skip an item then just click on the top right hand item.</br></br>You only have 30 seconds to find the items so hurry.</br></br> There are 18 items to look for, find at least 12 to head to the next level.</br></br>Good Luck!</p>
-        <button id="go" type="button" name="button">PLAY ></button>
-      </div>
-    </div> <!-- /start-modal -->
-    <div class="score-modal" id="score-modal">
-      <div id="scorebox" class="score-box">
-        <h1 id="end-title">Time's Up</h1>
-        <p id="scoreEnough"></p>
-        <p id="scoreP">Score: <span id="endScore">0</span></p>
-        <button id="play-again" type="button" name="button">Play Again ></button>
-        <button id="play-again-two" type="button" name="button">Try Again ></button>
-        <button id="level-two" type="button" name="button">Next Level ></button>
-      </div>
-    </div> <!-- /score-modal -->
-    <div class="game" id="game">
-      <header>
-        <div class="top-left">
-          <div class="pointer" id="pointer">
-            <p>Score: <span id="score">0</span></p>
+      <div class="start-modal" id="start-modal">
+        <div id="startbox" class="start-box">
+          <h1>Find'ems</h1>
+          <h2>How to play:</h2>
+          <p>The aim of the game is to find all of the hidden items in the room. </br></br>You will be displayed an item in the top right hand corner. Look for the item in the room and click on it once you find it. If you wish to skip an item then just click on the top right hand item.</br></br>You only have 30 seconds to find the items so hurry.</br></br> There are 18 items to look for, find at least 12 to head to the next level.</br></br>Good Luck!</p>
+          <button id="go" type="button" name="button">PLAY ></button>
+        </div>
+      </div> <!-- /start-modal -->
+      <div class="score-modal" id="score-modal">
+        <div id="scorebox" class="score-box">
+          <h1 id="end-title">Time's Up</h1>
+          <p id="scoreEnough"></p>
+          <p id="scoreP">Score: <span id="endScore">0</span></p>
+          <button id="play-again" type="button" name="button">Play Again ></button>
+          <button id="play-again-two" type="button" name="button">Try Again ></button>
+          <button id="level-two" type="button" name="button">Next Level ></button>
+        </div>
+      </div> <!-- /score-modal -->
+      <div class="game" id="game">
+        <header>
+          <div class="top-left">
+            <div class="pointer" id="pointer">
+              <p>Score: <span id="score">0</span></p>
+            </div>
           </div>
-        </div>
-        <div class="top-centre">
-          <img id="timeGlobe" src="/images/timer.png" alt="timer">
-          <p id="timer">3</p>
-        </div>
-        <div class="top-right">
-          <img id="currentToy" class="current-toy" src="/images/question-mark.png" alt="question-mark">
-        </div>
-      </header>
-      <main>
-        <audio loop id="game-tune">
-          <source src="/sounds/SlowSkaGameLoop.mp3" type="audio/mp3">
-          Your browser does not support the audio element.
-        </audio>
-        <audio id="sound-one">
-          <source src="/sounds/NFF-kid-attack.wav" type="audio/wav">
-          Your browser does not support the audio element.
-        </audio>
-        <audio id="sound-two">
-          <source src="/sounds/NFF-ya-whoa.wav" type="audio/wav">
-          Your browser does not support the audio element.
-        </audio>
-        <audio id="sound-three">
-          <source src="/sounds/NFF-yahoo.wav" type="audio/wav">
-          Your browser does not support the audio element.
-        </audio>
-        <audio id="pop-one">
-          <source src="/sounds/popOne.mp3" type="audio/mp3">
-          Your browser does not support the audio element.
-        </audio>
-        <audio id="pop-two">
-          <source src="/sounds/popTwo.mp3" type="audio/mp3">
-          Your browser does not support the audio element.
-        </audio>
-        <audio id="pop-three">
-          <source src="/sounds/popThree.mp3" type="audio/mp3">
-          Your browser does not support the audio element.
-        </audio>
-        <audio id="winner-sound">
-          <source src="/sounds/Minimal-Funky-Loop.wav" type="audio/wav">
-          Your browser does not support the audio element.
-        </audio>
-        <audio id="goSound">
-          <source src="/sounds/go.wav" type="audio/wav">
-          Your browser does not support the audio element.
-        </audio>
-        <audio id="levelTwoSound">
-          <source src="/sounds/DigitalKidLoop.wav" type="audio/wav">
-          Your browser does not support the audio element.
-        </audio>
-          <div class="items">
-          <div class="acid" id="acid"></div>
-          <div class="apple" id="apple"></div>
-          <div class="ball" id="ball"></div>
-          <div class="clock" id="clock"></div>
-          <div class="controller" id="controller"></div>
-          <div class="dinner" id="dinner"></div>
-          <div class="fish" id="fish"></div>
-          <div class="lavalamp" id="lavalamp"></div>
-          <div class="penguin" id="penguin"></div>
-          <div class="pokemon" id="pokemon"></div>
-          <div class="science" id="science"></div>
-          <div class="slipper" id="slipper"></div>
-          <div class="spock" id="spock"></div>
-          <div class="teddy" id="teddy"></div>
-          <div class="vader" id="vader"></div>
-          <div class="spaceship" id="spaceship"></div>
-          <div class="mathposter" id="mathposter"></div>
-          <div class="bin" id="bin"></div>
-        </div> <!-- /items -->
-        <div class="items-level-two" id="items-level-two">
-          <div class="book" id="book"></div>
-          <div class="bottle" id="bottle"></div>
-          <div class="clock-two" id="clock-two"></div>
-          <div class="cup" id="cup"></div>
-          <div class="cusion" id="cusion"></div>
-          <div class="pot" id="pot"></div>
-          <div class="slipper-two" id="slipper-two"></div>
-          <div class="soap" id="soap"></div>
-          <div class="sock" id="sock"></div>
-          <div class="spatu" id="spatu"></div>
-          <div class="sugar" id="sugar"></div>
-          <div class="vase" id="vase"></div>
-        </div> <!-- /items-level-two -->
-      </main>
-    </div> <!-- /game -->
+          <div class="top-centre">
+            <img id="timeGlobe" src="/images/timer.png" alt="timer">
+            <p id="timer">3</p>
+          </div>
+          <div class="top-right">
+            <img id="currentToy" class="current-toy" src="/images/question-mark.png" alt="question-mark">
+          </div>
+        </header>
+        <main>
+          <audio loop id="game-tune">
+            <source src="/sounds/SlowSkaGameLoop.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>
+          <audio id="sound-one">
+            <source src="/sounds/NFF-kid-attack.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+          <audio id="sound-two">
+            <source src="/sounds/NFF-ya-whoa.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+          <audio id="sound-three">
+            <source src="/sounds/NFF-yahoo.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+          <audio id="pop-one">
+            <source src="/sounds/popOne.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>
+          <audio id="pop-two">
+            <source src="/sounds/popTwo.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>
+          <audio id="pop-three">
+            <source src="/sounds/popThree.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>
+          <audio id="winner-sound">
+            <source src="/sounds/Minimal-Funky-Loop.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+          <audio id="goSound">
+            <source src="/sounds/go.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+          <audio id="levelTwoSound">
+            <source src="/sounds/DigitalKidLoop.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+            <div class="items">
+            <div class="acid" id="acid"></div>
+            <div class="apple" id="apple"></div>
+            <div class="ball" id="ball"></div>
+            <div class="clock" id="clock"></div>
+            <div class="controller" id="controller"></div>
+            <div class="dinner" id="dinner"></div>
+            <div class="fish" id="fish"></div>
+            <div class="lavalamp" id="lavalamp"></div>
+            <div class="penguin" id="penguin"></div>
+            <div class="pokemon" id="pokemon"></div>
+            <div class="science" id="science"></div>
+            <div class="slipper" id="slipper"></div>
+            <div class="spock" id="spock"></div>
+            <div class="teddy" id="teddy"></div>
+            <div class="vader" id="vader"></div>
+            <div class="spaceship" id="spaceship"></div>
+            <div class="mathposter" id="mathposter"></div>
+            <div class="bin" id="bin"></div>
+          </div> <!-- /items -->
+          <div class="items-level-two" id="items-level-two">
+            <div class="book" id="book"></div>
+            <div class="bottle" id="bottle"></div>
+            <div class="clock-two" id="clock-two"></div>
+            <div class="cup" id="cup"></div>
+            <div class="cusion" id="cusion"></div>
+            <div class="pot" id="pot"></div>
+            <div class="slipper-two" id="slipper-two"></div>
+            <div class="soap" id="soap"></div>
+            <div class="sock" id="sock"></div>
+            <div class="spatu" id="spatu"></div>
+            <div class="sugar" id="sugar"></div>
+            <div class="vase" id="vase"></div>
+          </div> <!-- /items-level-two -->
+        </main>
+      </div> <!-- /game -->
   </body>
 </html>
