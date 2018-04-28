@@ -37,3 +37,8 @@ If the player does not complete level 2 they're able to play again. If the playe
 ---
 
 I am pleased with the final game. I aim to develop the game further with new levels, challenges and functionality.
+
+##  Setup Instructions
+* Install Dependencies with 'yarn install'
+* Launch app with 'gulp'
+* Make sure you have installed 'gulp-cli' globally - 'yarn global add gulp-cli'
