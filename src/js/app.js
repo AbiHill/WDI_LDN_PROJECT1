@@ -187,12 +187,6 @@ $(() => {
     const currentSound = sounds[randomSoundIndexNumber];
     currentSound.play();
   }
-  // //Random Sound Generator Two
-  // function randomSoundGeneratorTwo(){
-  //   randomSoundIndexNumber = Math.floor(Math.random()*soundsTwo.length);
-  //   const currentSound = soundsTwo[randomSoundIndexNumber];
-  //   currentSound.play();
-  // }
 
   // Three Two One count down Function One
   function threeTwoOne(){
