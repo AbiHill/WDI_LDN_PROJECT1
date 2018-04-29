@@ -178,21 +178,21 @@ $(() => {
   const $scoreP = $('#scoreP');
 
   //Dom Variables
-  const sounds = [$soundOne, $soundTwo, $soundThree];
+  const soundsOne = [$soundOne, $soundTwo, $soundThree];
   const soundsTwo = [$popOne, $popTwo, $popThree];
 
   //Random Sound Generator one
-  function randomSoundGenerator(){
+  function randomSoundGenerator(sounds){
     randomSoundIndexNumber = Math.floor(Math.random()*sounds.length);
     const currentSound = sounds[randomSoundIndexNumber];
     currentSound.play();
   }
-  //Random Sound Generator Two
-  function randomSoundGeneratorTwo(){
-    randomSoundIndexNumber = Math.floor(Math.random()*soundsTwo.length);
-    const currentSound = soundsTwo[randomSoundIndexNumber];
-    currentSound.play();
-  }
+  // //Random Sound Generator Two
+  // function randomSoundGeneratorTwo(){
+  //   randomSoundIndexNumber = Math.floor(Math.random()*soundsTwo.length);
+  //   const currentSound = soundsTwo[randomSoundIndexNumber];
+  //   currentSound.play();
+  // }
 
   // Three Two One count down Function One
   function threeTwoOne(){
@@ -279,7 +279,7 @@ $(() => {
     if(!gameInPlay)return false;
     playersAnswer = $(e.target).attr('class');
     if(currentAnswer === playersAnswer) {
-      randomSoundGenerator();
+      randomSoundGenerator(soundsOne);
       $(e.target).css({
         backgroundImage: 'url(/images/bam.png)',
         backgroundRepeat: 'no-repeat'
@@ -358,7 +358,7 @@ $(() => {
   function checkAnswerTwo(e) {
     playersAnswer = $(e.target).attr('class');
     if(currentAnswer === playersAnswer) {
-      randomSoundGeneratorTwo();
+      randomSoundGenerator(soundsTwo);
       $(e.target).css({
         backgroundImage: 'url(/images/level-two-toys/poof.png)',
         backgroundRepeat: 'no-repeat'
