@@ -36,7 +36,7 @@ If the player does not complete level 2 they're able to play again. If the playe
 
 ---
 
-I am pleased with the final game. I aim to develop the game further with new levels, challenges and functionality.
+I am pleased with the final game. I aim to develop the game further with new levels, challenges and functionality. I'd also like to make it fully mobile responsive.
 
 ##  Setup Instructions
 * Install dependencies with 'yarn install'
