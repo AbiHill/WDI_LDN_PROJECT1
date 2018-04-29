@@ -4,7 +4,7 @@
 
 For my first project, the requirement was to design and build an in-browser game using HTML, CSS and JavaScript (jQuery library used). Find'ems was a game I wanted to create for my niece and is based on Where's Wally. The player has 30 seconds to find as many items as possible. The game features 2 levels with specific win conditions.
 
-##### [Visit website](https://findems.herokuapp.com/) for best playing experience (the game was not designed for mobile).
+##### [View and play the game here](https://findems.herokuapp.com/) for best playing experience (the game was not designed for mobile).
 
 ---
 
@@ -39,6 +39,6 @@ If the player does not complete level 2 they're able to play again. If the playe
 I am pleased with the final game. I aim to develop the game further with new levels, challenges and functionality.
 
 ##  Setup Instructions
-* Install Dependencies with 'yarn install'
+* Install dependencies with 'yarn install'
 * Launch app with 'gulp'
 * Make sure you have installed 'gulp-cli' globally - 'yarn global add gulp-cli'
